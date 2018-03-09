@@ -7,12 +7,15 @@
 	src:url("fuentes/lobster.ttf");
 	
 }
+
+div{text-align:center;}
 body{
 	
 }
 
 h1{font-family:AmaticSC-Regular;
 font-size:80px; 
+text-align:center;
 }
 
 p{font-family:lobster;
