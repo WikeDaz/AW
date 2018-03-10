@@ -2,11 +2,29 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<META NAME="Generator" CONTENT="EditPlus">
+  <META NAME="Author" CONTENT="">
+  <META NAME="Keywords" CONTENT="">
+  <META NAME="Description" CONTENT="">
 <link href="index_format.css" rel="stylesheet" type="text/css" media="screen" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Madeliciosa Contacto</title>
 </head>
-<body>
+<script>
+
+
+
+function submitHandler()
+{
+ 
+    var to = 'yuyaolin@ucm.es';
+    var body = bodyText.value;
+    mailTo.href="mailto:"+to+"?&body="+body;
+    mailTo.click();
+}
+
+</script>
+ <BODY >
 <div id="div-prin">
   <header>
     <nav> <a href="index.html">índice</a> <a href="detalles.html">detalles</a> <a href="bocetos.html">bocetos</a> <a href="miembros.html">miembros</a> <a href="planificacion.html">planificación</a> <a href="contacto.html">contacto</a> </nav>
@@ -15,13 +33,15 @@
   <section class="center width100">
     <h2> Contacto </h2>
     <p>¿Quiere dejarnos un comentario? rellene el formulario, nuestro equipo de expertos le responderá ASAP</p>
-    <form id="contacto" action="/sending_comment.php">
+    <form id="contacto" >
       <table id="submitInfo" class="width100">
         <tr>
           <td colspan="2"><input class="center" size="20" type="text" name="name" placeholder="Nombre" required></td>
+		    
         </tr>
         <tr>
-          <td class="width100" colspan="2"><input  class="center"  size="30" type="email" name="mail" placeholder="E-mail" required></td>
+          <!--<td class="width100" colspan="2"><input  class="center"  size="30" type="email" name="mail" placeholder="E-mail" required></td>-->
+		  <td colspan="2"><span class="label">E-mail:</span><input id="toText" type="text" size=50 value=""></td>
         </tr>
         <tr>
           <td>Motivo de la consulta:</td>
@@ -39,15 +59,19 @@
             Marque esta casilla para verificar que ha leido <a href="terms.html">nuestros terminos y condiciones</a>.</td>
         </tr>
         <tr>
-          <td colspan="2" class="height200px"><textarea class="height100" name="comment" required placeholder="Escriba aqui su consulta "></textarea></td>
+         <!-- <td colspan="2" class="height200px"><textarea class="height100" name="comment" required placeholder="Escriba aqui su consulta "></textarea></td>-->
+		  <td colspan="2" ><span class="bd"></span><textarea id="bodyText" rows=20 cols=100></textarea></td>
         </tr>
         <tr>
-          <td ><input type="submit" value="Enviar"></td>
+         <td><input name="btSend" type="button" value="send email" onclick="submitHandler();">
+ <a href="mailto:" id="mailTo"></a></td>
         </tr>
+
       </table>
-    </form>
+    
   </section>
   <footer></footer>
 </div>
+
 </body>
 </html>
