@@ -13,7 +13,7 @@
 
 		<!-- Barra Lateral -->
 		<div id="enlaces">
-			<div id="title"> <h1> Madeliciosa CONTACTO</h1> </div>
+			<div id="title"> <h1> Madeliciosa </h1> </div>
 			<div id="links">
 				<div class="navButton"> <a href="index.html">INDEX</a> </div>
 				<div class="navButton"> <a href="detalles.html">DETALLES</a> </div>
@@ -23,5 +23,43 @@
 				<div class="navButton"> <a href="contacto.html">CONTACTO</a> </div>
 			</div>
 		</div>
+		
+<!-- Div para el contenido principal -->
+		<div id="content"> 
+			<h1> Contacto </h1>
+			<form id="contacto" action="/sending_comment.php">
+				<table id="submitInfo">
+					<tr>
+						<td class="col-right">Nombre</td>
+						<td class="col-left"><input type="text" name="name" required></td>
+					</tr>
+					<tr>
+						<td class="col-right">Email</td>
+						<td class="col-left"><input type="email" name="mail" required></td>
+					</tr>
+					<tr >
+						<td class="col-right">Motivo de la consulta</td>
+						<td class="col-left">
+							<input type="radio" name="motivo" value="evaluation" checked> Evaluación <br>
+							<input type="radio" name="motivo" value="suggestion" > Sugerencias <br>
+							<input type="radio" name="motivo" value="critics" > Críticas <br>
+						</td>
+					</tr>
+				</table>
+				<div>
+					<input type="checkbox" name="conditions" value="agreed" required> 
+					Marque esta casilla para verificar que ha leido <a href="terms.html">nuestros terminos y condiciones</a>.
+				</div>
+				<div>
+					consulta <br>
+					<input type="text" class="textBox" name="comment" size="20" required>
+				</div>
+				<div id="centerSubmit">
+					<input type="submit" value="Submit">
+				</div>
+			</form>
+		</div>
+	</div>
 </body>
 </html>
+
