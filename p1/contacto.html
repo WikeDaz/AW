@@ -2,32 +2,15 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<META NAME="Generator" CONTENT="EditPlus">
-  <META NAME="Author" CONTENT="">
-  <META NAME="Keywords" CONTENT="">
-  <META NAME="Description" CONTENT="">
+<meta name="Generator" content="EditPlus">
+<meta name="Author" content="">
+<meta name="Keywords" content="">
+<meta name="Description" content="">
 <link href="index_format.css" rel="stylesheet" type="text/css" media="screen" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Madeliciosa Contacto</title>
 </head>
-<script>
-
-
-
-function submitHandler()
-{
-	<!--var subject = motivo.value;-->
-    var to = 'yuyaolin@ucm.es';
-    var body = "My Name is: "+name.value+"%0a%0d"
-            +"My Email Address is: "+email.value+"%0a%0d"
-            +"Message:"+"%0a%0d"+bodyText.value;
-
-    mailTo.href="mailto:"+to+"?&body="+body;
-    mailTo.click();
-}
-
-</script>
- <BODY >
+<body>
 <div id="div-prin">
   <header>
     <nav> <a href="index.html">índice</a> <a href="detalles.html">detalles</a> <a href="bocetos.html">bocetos</a> <a href="miembros.html">miembros</a> <a href="planificacion.html">planificación</a> <a href="contacto.html">contacto</a> </nav>
@@ -36,13 +19,15 @@ function submitHandler()
   <section class="center width100">
     <h2> Contacto </h2>
     <p>¿Quiere dejarnos un comentario? rellene el formulario, nuestro equipo de expertos le responderá ASAP</p>
-    <form id="contacto" >
+    <form id="contacto" action="confirmsendemail.php" method="post">
       <table id="submitInfo" class="width100">
         <tr>
-		    <td ><span class="label"></span><input id="name" type="text" size=50 value=""placeholder="name" required></td>
+          <td><span class="label"></span>
+            <input name="name" type="text" size="50" placeholder="name" required /></td>
         </tr>
         <tr>
-		  <td colspan="2"><span class="label"></span><input id="email" type="text" size=50 value=""placeholder="E-mail" required></td>
+          <td colspan="2"><span class="label"></span>
+            <input name="email" type="text" size="50" placeholder="E-mail" required /></td>
         </tr>
         <tr>
           <td>Motivo de la consulta:</td>
@@ -55,23 +40,25 @@ function submitHandler()
             <input type="radio" name="motivo" value="critics" />
             Críticas <br></td>
         </tr>
-        <tr>
-          <td><input type="checkbox" name="conditions" value="agreed" required/>
-            Marque esta casilla para verificar que ha leido <a href="terms.html">nuestros terminos y condiciones</a>.</td>
+		  <tr>
+          <td>¿A quién quiere mandar el correo?<select name="destino"><option value="colano@ucm.es">Carlos Olano</option><option value="yuyaolin@ucm.es">Yuyao Lin</option><option value="">Enrique Román</option></select></td>
+        </tr>
+		  <tr>
+          <td colspan="2" >
+            <textarea name="bodyText" rows="20" cols="100" placeholder="Escriba aqui su pregunta/consulta"></textarea></td>
         </tr>
         <tr>
-		  <td colspan="2" ><span class="bd"></span><textarea id="bodyText" rows=20 cols=100></textarea></td>
+          <td><input type="checkbox" name="conditions" required/>
+            He leido y acepto <a href="terms.html">nuestros terminos y condiciones</a>.</td>
         </tr>
+        
         <tr>
-         <td colspan="2" ><input name="btSend" type="button" value="send email" onclick="submitHandler();">
-			<a href="mailto:" id="mailTo"></a></td>
+          <td colspan="2" ><input type="submit" value="Enviar email"/></td>
         </tr>
-
       </table>
-    
+    </form>
   </section>
   <footer></footer>
 </div>
-
 </body>
 </html>
