@@ -1,4 +1,4 @@
 <?php echo "<!-- FOOTER HTML -->" ?>
 <footer class="footer">
-    <p>&copy; 2017</p>
+    <p>&copy; 2018</p>
 </footer>
