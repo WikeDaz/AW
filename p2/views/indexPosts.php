@@ -5,10 +5,19 @@
     <title>Lista de Posts - Plantilla</title>
 </head>
 <body>
+
 <div class="container">
     <!-- The justified navigation menu is meant for single line per list item.
      Multiple lines will require custom code not provided by Bootstrap. -->
     <?php require_once('layout/header.php'); ?>
+	<div class="search">
+                    <form method="get" id="s-form" action="#" class="s-form">
+                        <fieldset>
+                            <input type="text" class="s_text" name="s" id="s" value="Search" onfocus="this.value=(this.value=='Search') ? '' : this.value;" onblur="this.value=(this.value=='') ? 'Search' : this.value;" />
+                            <input type="submit" class="s_button" value="Buscar" id="searchsubmit" />
+                        </fieldset>
+                    </form>
+	</div>
     <section>
         <!-- Jumbotron -->
         <div class="jumbotron">
@@ -36,6 +45,7 @@
     <?php require_once('layout/footer.php'); ?>
 
 </div>
+
 <script src="/js/ie10-viewport-bug-workaround.js"></script>
 </body>
 </html>
