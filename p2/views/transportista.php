@@ -4,12 +4,25 @@
 <head>
 <meta charset="utf-8">
 <title>Documento sin título</title>
-	<?php
-		if(isset($_SESSION["transportista"])){
-			<li><a href="usuario.php">Inicio</a></li>
-	?>
+<link rel="stylesheet" href="../css/estiloRestaurante.css">
 </head>
 
+
 <body>
+	<div class="wrap">
+			<ul class ="tabs">
+				<li><a href="#pedi"><span>Pedidos</span></a></li>
+				<li><a href="#per"><span>Perfil</span></a></li>
+			
+			</ul>
+		</div>
+		<div class="secciones">
+			<article id="pedi"></article>
+			<?php include "pedidoRestaurante.php";?>
+			<article id="per"></article>
+			<?php include "perfil.php";?>
+		</div>
+	
+	
 </body>
 </html>

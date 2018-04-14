@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -9,29 +10,16 @@
 	<script src="../js/usuarioMain.js"></script>
 	
 	</head>
+	<h1>MADELICIOSA</h1>
+	<hr/>
 	<body>
-		<div class="wrap">
-			<ul class ="tabs">
-				<li><a href="#ini" ><span>Inicio</span></a></li>
-				<li><a href="#pedi"><span>Pedidos</span></a></li>
-				<li><a href="#per"><span>Perfil</span></a></li>
-			
-			</ul>
-		</div>
-		<div class="secciones">
-			<article id="ini"></article>
-				<table>
-					<tr>
-						
-					</tr>
-			</table>
-			<article id="pedi"></article>
-			<p>pedi prueba</p>
-			<article id="per"></article>
-			<p>per prueba</p>
-		</div>
-		
-		
-		
+		if(isset($_SESSION["esR"])){
+		<?php include "restaurante.php";?>
+		}else if(isset($_SESSION["esT"])){
+		<?php include "transportista.php";?>}
+		else if(isser($_SESSION["esC"])){
+		<?php include "cliente.php";?>
+		}
+
 	</body>
 	
