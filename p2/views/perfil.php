@@ -23,6 +23,7 @@
 				<li><h2>Nombre</h2>
 			    <p>Descripciones</p></li>
 			</ul>
+		<?php
 		if(isset($_SESSION["esR"])){
 		<div id="tipoComida"></div>
 		<ul>
@@ -38,9 +39,8 @@
 				</form>
 		</ul>
 				
-		}		
-		
-		
+		}	
+		?>
 		
 		<div id="zona"></div>
 			<ul>
@@ -54,7 +54,7 @@
 				</form>
 				</ul>
 		</div>
-	<ul><li><button type="submit">Actualizar Perfil</button></li></ul>
+		<ul><li><button type="submit">Actualizar Perfil</button></li></ul>
 	
 	
 	

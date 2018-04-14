@@ -6,13 +6,13 @@
 	<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimun-sale=1.0">
 	<title>MADELICIOSA</title>
 	<link rel="stylesheet" href="../css/estiloUsuario.css">
-	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-	<script src="../js/usuarioMain.js"></script>
 	
 	</head>
 	<h1>MADELICIOSA</h1>
 	<hr/>
 	<body>
+		<div id="contenido">
+		<?php
 		if(isset($_SESSION["esR"])){
 		<?php include "restaurante.php";?>
 		}else if(isset($_SESSION["esT"])){
@@ -20,6 +20,7 @@
 		else if(isser($_SESSION["esC"])){
 		<?php include "cliente.php";?>
 		}
-
+		?>
+		</div>
 	</body>
 	
