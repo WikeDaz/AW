@@ -1,0 +1,50 @@
+@charset "utf-8";
+/* CSS Document */
+*{
+	margin:0 ;
+	padding:0;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+	
+}
+
+body{
+	background: #FFF;
+
+}
+wrap{
+ width:1000px;
+	max-width:95%;
+	margin:30px auto;
+	
+}
+
+ul.tabs{
+	width:100%;
+	
+	list-style: none;
+	display:flex;
+	margin-left:400px;
+	
+	
+}
+
+.active{
+	background:#32AFCF;
+}
+ul.tabs li a{
+	border:1px solid  #000;
+	text-decoration:none;
+	text-align:justify ;
+	font-size:16px;
+	display: block;
+	
+	
+}
+
+.secciones{
+	width:100%;
+	padding:10px;
+	margin-left: 400px;
+}
