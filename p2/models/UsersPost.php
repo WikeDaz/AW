@@ -43,6 +43,31 @@ class UsersPost extends EntityBase {
     }
 
     /**
+     * @return type - El tipo de usuario
+     */
+    public function login($name,$passwd)
+    {
+        try {
+            if ($user = $this->db()->prepare("SELECT * from users where user_name='" . $name . "'"){
+                
+                if (!$user->execute()) {
+                    $key = "901"; //Codigo Error/Informacion "El registro no se ha podido crear correctamente"
+                } else {
+                    $key = "100"; //Codigo Error/Informacion "Registro creado correctamente"
+                }
+            } else {
+                $key = $this->db()->error; //Codigo Error/Informacion "Error directo de base de datos"
+            }
+        } catch (Exception $e) {
+            header('Location: ../error.php?err=' . $e->getMessage() . "\n");
+        }
+
+        if($user['passwd'] == $pass){
+            return $this->$user['type'];
+    }
+
+
+    /**
      * @return mixed
      */
     public function getId()
