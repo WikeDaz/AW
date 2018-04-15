@@ -19,22 +19,15 @@
 			</ul>
 		</div>
 		<div class="secciones">
-			<article id="oferta"></article>
-			<h1>
-			<div class ="cabecera">
-				<div class="left">
-				Restaurante Nombre
-		  	</div>
-		  	<div class="right">
-				Descripcion de restaurante
-		  	</div>
-			
-			</div>
-			</h1>
-			<article id="pedi"></article>
+			<article id="oferta">
+		  		<?php include "oferta.php";?>
+			</article>
+			<article id="pedi">
 			<?php include "pedidoRestaurante.php";?>
-			<article id="per"></article>
+				</article>
+			<article id="per">
 			<?php include "perfil.php";?>
+			</article>
 		</div>
 	
 	

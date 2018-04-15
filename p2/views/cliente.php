@@ -18,7 +18,7 @@
 			</ul>
 		</div>
 		<div class="secciones">
-			<article id="ini"></article>
+			<article id="ini">
 			<h1>
 			<div class ="cabecera">
 				<div class="left">
@@ -27,13 +27,32 @@
 		  	<div class="right">
 				Descripcion de restaurante
 		  	</div>
-			
 			</div>
 			</h1>
-			<article id="pedi"></article>
-			<?php include "pedidoCliente.php";?>
-			<article id="per"></article>
-			<?php include "perfil.php";?>
+				<table border="0">
+  				<tr>
+				 <td><img src="../images/img/food1.jpg"  align="left"/>Nombre<br/>Desripcion<br/><button type="submit">Add</button></td>
+				 <td><img src="../images/img/food2.jpg"  align="left"/>Nombre<br/>Desripcion<br/><button type="submit">Add</button></td>
+ 				 </tr>
+				<tr> 
+					<td><img src="../images/img/food3.jpg"  align="left"/>Nombre<br/>Desripcion<br/><button type="submit">Add</button></td>
+				 <td><img src="../images/img/food4.jpg"  align="left"/>Nombre<br/>Desripcion<<br/><button type="submit">Add</button></td>
+					</tr>
+				<tr>
+					 <td><img src="../images/img/food4.jpg"  align="left"/>Nombre<br/>Desripcion<br/><button type="submit">Add</button></td>
+				 <td><img src="../images/img/food5.jpg"  align="left"/>Nombre<br/>Desripcion<br/><button type="submit">Add</button></td>
+					</tr>
+				</table>
+				
+			</article>
+			<article id="pedi">
+				<?php include "pedidoCliente.php";?>
+			</article>
+			
+			<article id="per">
+				<?php include "perfil.php";?>
+			</article>
+			
 		</div>
 	
 	
