@@ -5,12 +5,36 @@
     <title>Lista de Posts - Plantilla</title>
 </head>
 <body>
-
-<div class="container">
+<ul>
+	
+	
+   		<frameset  rows="50%,50%">
+    
+     
+		<div class="container"style="width:100%;  height:65%;">
     <!-- The justified navigation menu is meant for single line per list item.
      Multiple lines will require custom code not provided by Bootstrap. -->
     <?php require_once('layout/header.php'); ?>
-	<div class="search">
+	<div id="left" style="float:left ;  width:20%;  height:100%;">
+		<div id="tipoComida">
+		<ul>
+			
+			<form action="/example/html/form_action.asp" method="get">
+		  <p><input type="checkbox" name="styleFood" value="Arabe" /> Arabe</p>
+		  <p><input type="checkbox" name="styleFood" value="Asador" checked="checked" />Asador</p>
+			<p><input type="checkbox" name="styleFood" value="Argentino" /> Argentino</p>
+		  <p><input type="checkbox" name="styleFood" value="Americano" checked="checked" />Americano</p>
+			<p><input type="checkbox" name="styleFood" value="Belga" /> Belga</p>
+		  <p><input type="checkbox" name="styleFood" value="Spanish" checked="checked" />Spanish</p>
+			<p><input type="checkbox" name="styleFood" value="China" /> China</p>
+		 
+			</form>
+		</ul>
+		</div>
+	</div>
+	
+	<div id="right" style="float:left ;  width:80%; height:100%;">
+				<div class="search">
                     <form method="get" id="s-form" action="#" class="s-form">
                         <fieldset>
                             <input type="text" class="s_text" name="s" id="s" value="Search" onfocus="this.value=(this.value=='Search') ? '' : this.value;" onblur="this.value=(this.value=='') ? 'Search' : this.value;" />
@@ -18,34 +42,22 @@
                         </fieldset>
                     </form>
 	</div>
-    <section>
-        <!-- Jumbotron -->
-        <div class="jumbotron">
-            <h1>All Post</h1>
-            <p class="lead">Estos son los post de cada Autor:</p>
-            <p><a class="btn btn-lg btn-success" href="#" role="button">Actualizar...</a></p>
-        </div>
 
-        <!-- Example row of columns -->
-        <div class="row">
-            <?php foreach ($posts as $post) { ?>
-                <div class="col-lg-4">
-                    <h2>Author: <?php echo $post->getAuthor(); ?></h2>
-                    <p class="text-danger">
-                       Content: <?php echo $post->getContent(); ?>
-                    </p>
-                    <p>
-                        <a class="btn btn-primary" href="<?php echo $helper->url('post','show') ?>&id=<?php echo $post->getId(); ?>" role="button">Ver detalle &raquo;</a>
-                    </p>
-                </div>
-            <?php } ?>
-        </div>
-    </section>
-    <!-- Site footer -->
-    <?php require_once('layout/footer.php'); ?>
+				
+	</div>
+		
+    </frameset>
+    <frameset cols="50%,*">
+     
+		<div style=" width:100px">
+		<div  style=" float:left; width:50px;"><img src="../../img/food1.jpg"  width=50px height=50px/></div>
+		 <div  style=" float:left; width:50px;"><img src="../../img/food2.jpg"  width=50px height=50px/></div>
+		</div>
+  
+    </frameset>
+</frameset>
+				
+		
 
-</div>
-
-<script src="/js/ie10-viewport-bug-workaround.js"></script>
 </body>
 </html>

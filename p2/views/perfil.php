@@ -9,23 +9,27 @@
 
 <body>
 	<hr/>
-	<div id="contenedor">
-		<div id="imagen"></div>
+		
+		<div id="center"style=" width:100%;  height:85%;">
+				<div id="imagen"style="float:left ;  width:40%;  height:100%;">
 			<ul>
 				<li><img src="../images/img/BocetosAltoNivel/Index.png" width="50" height="50"></li>  
 				<li><button type="submit">Cambiar Imagen</button></li>
 			
 		
 			</ul>
+			</div>
 			
-		<div id="descripcion"></div>
-			<ul>
+			
+		<div id="descripcion"style="float:left ;  width:30%;  height:100%;">
+		<ul>
 				<li><h2>Nombre</h2>
 			    <p>Descripciones</p></li>
 			</ul>
-		<?php
-		if(isset($_SESSION["esR"])){
-		<div id="tipoComida"></div>
+		</div>
+			
+		
+		<div id="tipoComida"style="float:left ;  width:15%;  height:100%;">
 		<ul>
 			<form action="/example/html/form_action.asp" method="get">
 		  <p><input type="checkbox" name="styleFood" value="Arabe" /> Arabe</p>
@@ -34,15 +38,15 @@
 		  <p><input type="checkbox" name="styleFood" value="Americano" checked="checked" />Americano</p>
 			<p><input type="checkbox" name="styleFood" value="Belga" /> Belga</p>
 		  <p><input type="checkbox" name="styleFood" value="Spanish" checked="checked" />Spanish</p>
-			<p><input type="checkbox" name="styleFood" value=China" />China</p>
+			<p><input type="checkbox" name="styleFood" value="China" />China</p>
 		  <input type="submit" value="Submit" />
-				</form>
+			</form>
 		</ul>
+		</div>
 				
-		}	
-		?>
 		
-		<div id="zona"></div>
+		
+		<div id="zona"style="float:left ;  width:15%;  height:100%;">
 			<ul>
 				<form>
 				<select name="zone">
@@ -54,7 +58,24 @@
 				</form>
 				</ul>
 		</div>
-		<ul><li><button type="submit">Actualizar Perfil</button></li></ul>
+		</div>
+		</div>  
+            <div id="footer"style="width:100%;  height:15%;">
+				
+				<ul><li><button type="submit">Actualizar Perfil</button></li></ul>
+			</div> 
+		
+		
+	</div>
+            
+          
+          
+	
+		
+	
+	
+		
+	
 	
 	
 	
