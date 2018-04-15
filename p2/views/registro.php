@@ -1,10 +1,19 @@
-<!doctype html>
-<html>
+<?php session_start(); ?>
+<!DOCTYPE html>
 <head>
-<meta charset="UTF-8">
-<title>Documento sin título</title>
+	<html lang="es">
+	<meta charset="UTF-8">
+    <title>Madeliciosa</title>
 </head>
 
 <body>
+<div class="container">
+    <?php require_once('layout/header.php'); ?>
+          
+    <h1>DIFERENTE REGISTRO SI ES CLIENTE RESTAURANTE O TRANSPORTISTA</h1>
+                 
+    <?php require_once('layout/footer.php'); ?>
+</div>
 </body>
 </html>
+

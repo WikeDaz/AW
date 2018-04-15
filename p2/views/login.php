@@ -1,30 +1,37 @@
-<!doctype html>
+<?php session_start(); 
+
+	$_SESSION["login"] = true;
+	$_SESSION["name"] = 'Cliente';
+	$_SESSION["tipo"] = "Cliente";
+?>
+<!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Login</title>
+	<meta charset="utf-8">
+	<title>Portada</title>
 </head>
-
-<body>
-	<form action="action_page.php">
-  <div class="imgcontainer">
-    <img src="img_avatar2.png" alt="Avatar" class="avatar">
-  </div>
-
-  <div class="container">
-    <label for="uname"><b>Usuario</b></label>
-    <input type="text" placeholder="Nombre de usuario" name="uname" required>
-
-    <label for="psw"><b>Contraseña</b></label>
-    <input type="password" placeholder="Contraseña" name="psw" required>
-
-    <button type="submit">Login</button>
-  </div>
-
-  <div class="container" style="background-color:#f1f1f1">
-    <span class="psw">Registrarse <a href="registro.php">Nuevo usuario</a></span>
-  </div>
-</form>
 	
+<body>
+
+<div id="contenedor">
+
+ 	<?php require ('layout/header.php'); ?>
+	
+	<div id="contenido">
+		<h1>Acceso al sistema</h1>
+		<form action="procesarLogin.php" method="POST">
+		<fieldset>
+		<legend>Usuario y contraseña</legend>
+		<p><label>Name:</label> <input type="text" name="username" /></p>
+		<p><label>Password:</label> <input type="password" name="password" /><br /></p>
+		<button type="submit">Entrar</button>
+		</fieldset>
+		<a href="registro.php">Nuevo usuario</a>
+	</div>
+	
+	<?php require ('footer.php'); ?>
+
+</div>
+
 </body>
 </html>

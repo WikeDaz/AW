@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <head>
 	<html lang="es">
@@ -14,6 +15,7 @@
                  
     <?php require_once('views/layout/footer.php'); ?>
 
+	<?php require_once('views/layout/sidebar.php'); ?>
 </div>
 </body>
 </html>
