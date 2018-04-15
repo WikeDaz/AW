@@ -1,14 +1,13 @@
 <?php echo "<!-- HEADER HTML -->" ?>
-<div class="header">
-        <!--h3 class="text-muted">Hola < ?php echo $first_name . ' ' . $last_name; ?>!</h3 -->
-		<h1>MADELICIOSA</h1>
+<div class="header">      
+		
     <nav>
-        <ul class="nav nav-justified">
-            <li class="active"><a href="index.php">Home</a></li>
-            <li><a href="#">Register</a></li>
-            <li><a href="#">Login</a></li>
-			<li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
+		<h1><a href="index.php">MADELICIOSA</a></h1>
+        <ul class="nav nav-justified">        
+            <li><a href="/aw/p2/views/registro.php">Añade tu restaurante</a></li>
+            <li><a href="/aw/p2/views/registro.php">Reparte con nosotros</a></li>
+			<li><a href="/aw/p2/views/login.php">Entrar/Registro</a></li>
+			<li><a href="#">Contacto</li>
         </ul>
     </nav>
 </div>

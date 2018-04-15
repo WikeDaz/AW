@@ -1,14 +1,20 @@
-<?php
-    require_once('config/global.php');
-    require_once('config/dbconnect.php');
-    require_once('controllers/functions.php');
-    require_once('controllers/baseController.php');
+<!DOCTYPE html>
+<head>
+	<html lang="es">
+	<meta charset="UTF-8">
+    <title>Madeliciosa</title>
+</head>
 
-    if(isset($_GET["controller"])){
-        $controllerObj = loadController($_GET["controller"]);
-        execAction($controllerObj);
-    }else{
-        $controllerObj=loadController(CONTROLADOR_DEFECTO);
-        execAction($controllerObj);
-    }
-?>
+<body>
+<div class="container">
+    <?php require_once('views/layout/header.php'); ?>
+          
+    <h1>La mejor web de contacto con restaurantes de Madrid</h1>
+	<div>Lista de restaurantes</div>
+                 
+    <?php require_once('views/layout/footer.php'); ?>
+
+</div>
+</body>
+</html>
+
