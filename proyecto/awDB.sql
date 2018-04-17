@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 17, 2018 at 06:34 PM
+-- Generation Time: Apr 17, 2018 at 06:52 PM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 5.6.34
 
@@ -21,8 +21,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `awDB`
 --
-CREATE DATABASE IF NOT EXISTS `awDB` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `awDB`;
 
 -- --------------------------------------------------------
 
