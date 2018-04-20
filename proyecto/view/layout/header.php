@@ -1,4 +1,6 @@
+
 <?php echo "<!-- HEADER HTML -->" ?>
+<link rel="stylesheet" href="css/index_view.css"  type="text/css" media="all" />
 <div class="header">
     <h1>MADELICIOSA</h1>
     <nav>
