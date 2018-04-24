@@ -18,7 +18,8 @@
 				<?php
 				echo "<form id='perfil' action='updateperfil.php' method='post'>",
 				"<ul>",
-				"<li><img src='/aw/media/".$_SESSION["ID_user"].".jpg'width="50" height="50"/> <input type='file' value='/aw/media/".$_SESSION["ID_user"].".jpg'/></li></ul>";
+				"<li><img src='/aw/media/".$_SESSION["ID_user"].".jpg'/> <input type='file' value='/aw/media/".$_SESSION["ID_user"].".jpg'/>
+				</li></ul>";
 				?>
 				</div>
 			
@@ -38,37 +39,28 @@
 				"<li><input name='direction' type='text' size='50' value='".$infouser["dir_user"]."' /></li></ul>";
 				?>
 				</div>
-			
 		
-				<div id="tipoComida">
-				<ul>
-					<form action="/example/html/form_action.asp" method="get">
-					  <p><input type="checkbox" name="styleFood" value="Arabe" /> Arabe</p>
-					  <p><input type="checkbox" name="styleFood" value="Asador" checked="checked" />Asador</p>
-					  <p><input type="checkbox" name="styleFood" value="Argentino" /> Argentino</p>
-					  <p><input type="checkbox" name="styleFood" value="Americano" checked="checked" />Americano</p>
-					  <p><input type="checkbox" name="styleFood" value="Belga" /> Belga</p>
-				      <p><input type="checkbox" name="styleFood" value="Spanish" checked="checked" />Spanish</p>
-					  <p><input type="checkbox" name="styleFood" value="China" />China</p>
-				    <input type="submit" value="Submit" />
-					</form>
-				</ul>
-				</div>
-				
-		
-		
-				<div id="zona">
-				<ul>
-				<form>
-					<select name="zone">
-					<option value="Madrid">Madrid</option>
-					<option value="Leganes">Leganes</option>
-					<option value="Mostoles">Mostoles</option>
-					<option value="Alobendas">Alcobendas</option>
-					</select>
-				</form>
-				</ul>
-				</div>
+				 <div id="zona">
+                 <?php   
+                 echo"<ul> <form> 
+                    <select name="zone">";
+                foreach($matrizzone as $register){
+                    $flag = FALSE;
+                    foreach($matrizzonechecked as $register2){
+                        if ($register["ID"]==$register2["ID_types_food"]){
+                            $flag = TRUE;
+                        }
+                    }
+                    if ($flag){
+                         echo " <option value='".$register["Name"]."' seleted="selected"/>".$register["Name"]."<br />";
+
+                    } else {
+                        echo " <option value='".$register["Name"]."' />".$register["Name"]."<br />";
+                    }
+                }
+                echo "</select></form></ul>";
+                ?>
+                </div>
 		</div>
 		  
 		<div id="footer">

@@ -23,20 +23,21 @@ ul {
 
 #imagen{
 	float:left ;  
-	width:37%;  
+	width:34%;  
 	height:100%;
 }
 #descripcion{
 	float:left ;  
-	width:45%;  
+	width:40%;  
 	height:100%
 }
-
-#zona{
-	float:left ; 
-	width:18%;  
+#tipoComida{
+	float:left ;  
+	width:13%;  
 	height:100%;
 }
-
-
-
+#zona{
+	float:left ; 
+	width:13%;  
+	height:100%;
+}
