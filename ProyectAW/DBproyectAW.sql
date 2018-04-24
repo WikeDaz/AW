@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 23, 2018 at 11:05 PM
+-- Generation Time: Apr 24, 2018 at 07:42 PM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 5.6.34
 
@@ -21,8 +21,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `DBproyectAW`
 --
-CREATE DATABASE IF NOT EXISTS `DBproyectAW` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `DBproyectAW`;
 
 -- --------------------------------------------------------
 
@@ -34,6 +32,19 @@ CREATE TABLE `advertising` (
   `ID_user` varchar(11) NOT NULL,
   `type` int(11) NOT NULL,
   `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `comments`
+--
+
+CREATE TABLE `comments` (
+  `ID_restaurant` varchar(11) NOT NULL,
+  `ID_escritor` varchar(11) NOT NULL,
+  `comment` varchar(255) NOT NULL,
+  `tiemstamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -126,7 +137,8 @@ CREATE TABLE `users` (
 
 CREATE TABLE `user_rst` (
   `ID_user` varchar(15) NOT NULL,
-  `dsc_rst` varchar(150) NOT NULL
+  `dsc_rst` varchar(150) NOT NULL,
+  `name_rst` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -150,6 +162,14 @@ CREATE TABLE `user_trs` (
 ALTER TABLE `advertising`
   ADD KEY `ID_user` (`ID_user`),
   ADD KEY `type` (`type`);
+
+--
+-- Indexes for table `comments`
+--
+ALTER TABLE `comments`
+  ADD PRIMARY KEY (`ID_restaurant`,`ID_escritor`,`tiemstamp`),
+  ADD KEY `ID_restaurant` (`ID_restaurant`),
+  ADD KEY `ID_escritor` (`ID_escritor`);
 
 --
 -- Indexes for table `lines_orders`
@@ -239,6 +259,13 @@ ALTER TABLE `typesfood`
 ALTER TABLE `advertising`
   ADD CONSTRAINT `advertising_ibfk_1` FOREIGN KEY (`ID_user`) REFERENCES `users` (`user_nif`),
   ADD CONSTRAINT `advertising_ibfk_2` FOREIGN KEY (`type`) REFERENCES `typesfood` (`ID`);
+
+--
+-- Constraints for table `comments`
+--
+ALTER TABLE `comments`
+  ADD CONSTRAINT `comments_ibfk_1` FOREIGN KEY (`ID_restaurant`) REFERENCES `users` (`user_nif`),
+  ADD CONSTRAINT `comments_ibfk_2` FOREIGN KEY (`ID_escritor`) REFERENCES `users` (`user_nif`);
 
 --
 -- Constraints for table `lines_orders`
