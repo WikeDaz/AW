@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+- phpMyAdmin XML Dump
+- version 4.8.0
+- https://www.phpmyadmin.net
+-
+- Servidor: localhost
+- Tiempo de generación: 26-04-2018 a las 14:46:47
+- Versión del servidor: 10.1.31-MariaDB
+- Versión de PHP: 7.2.4
+-->
+
+<pma_xml_export version="1.0" xmlns:pma="https://www.phpmyadmin.net/some_doc_url/">
+    <!--
+    - Base de datos: 'DBproyectAW'
+    -->
+    <database name="DBproyectAW">
+        <!-- Tabla advertising -->
+        <!-- Tabla comments -->
+        <!-- Tabla lines_orders -->
+        <table name="lines_orders">
+            <column name="ID_order">3</column>
+            <column name="ID_offer">2</column>
+        </table>
+        <table name="lines_orders">
+            <column name="ID_order">3</column>
+            <column name="ID_offer">3</column>
+        </table>
+        <!-- Tabla offers -->
+        <table name="offers">
+            <column name="ID">1</column>
+            <column name="ID_restaurant">23070793V</column>
+            <column name="name">Tortilla de patatas</column>
+            <column name="price">7</column>
+            <column name="description">Tortilla de patatas de 4 huevos</column>
+            <column name="type">1</column>
+        </table>
+        <table name="offers">
+            <column name="ID">2</column>
+            <column name="ID_restaurant">23070793V</column>
+            <column name="name">Croquetas de jamón</column>
+            <column name="price">9</column>
+            <column name="description">Croquetas de jamón ibérico, 6 unidades</column>
+            <column name="type">1</column>
+        </table>
+        <table name="offers">
+            <column name="ID">3</column>
+            <column name="ID_restaurant">23070793V</column>
+            <column name="name">pulpo a la gallega</column>
+            <column name="price">12</column>
+            <column name="description">Pulpo traído directamente desde galicia</column>
+            <column name="type">1</column>
+        </table>
+        <table name="offers">
+            <column name="ID">6</column>
+            <column name="ID_restaurant">47391269A</column>
+            <column name="name">Hamburguesa CAMBA</column>
+            <column name="price">15</column>
+            <column name="description">Plátano dorado, emulsión de Ron Santa Teresa y rodaja de queso de cabra.</column>
+            <column name="type">2</column>
+        </table>
+        <table name="offers">
+            <column name="ID">7</column>
+            <column name="ID_restaurant">47391269A</column>
+            <column name="name">Hamburguesa CHIPOTLE</column>
+            <column name="price">13</column>
+            <column name="description">Guacamole casero, fresco y rústico, acompañado de salsa Chipotle </column>
+            <column name="type">2</column>
+        </table>
+        <table name="offers">
+            <column name="ID">11</column>
+            <column name="ID_restaurant">47391269A</column>
+            <column name="name">Hamburguesa Kevin Ba</column>
+            <column name="price">11</column>
+            <column name="description">Carne en la plancha mezclada con trozos de bacon, cebolla y queso</column>
+            <column name="type">2</column>
+        </table>
+        <table name="offers">
+            <column name="ID">12</column>
+            <column name="ID_restaurant">47391269A</column>
+            <column name="name">Hamburguesa YANKEE</column>
+            <column name="price">12</column>
+            <column name="description">Carne de vaca, costillas de cerdo, queso, cebolla y lechuga batavia.</column>
+            <column name="type">2</column>
+        </table>
+        <!-- Tabla orders -->
+        <table name="orders">
+            <column name="ID">3</column>
+            <column name="ID_transport"></column>
+            <column name="ID_restaurant">23070793V</column>
+            <column name="ID_user">44332211K</column>
+            <column name="date">2018-05-08 21:00:00</column>
+            <column name="state">0</column>
+            <column name="type">0</column>
+            <column name="total_price">65</column>
+        </table>
+        <!-- Tabla typesfood -->
+        <table name="typesfood">
+            <column name="ID">1</column>
+            <column name="Name">Española</column>
+        </table>
+        <table name="typesfood">
+            <column name="ID">2</column>
+            <column name="Name">Americana</column>
+        </table>
+        <table name="typesfood">
+            <column name="ID">3</column>
+            <column name="Name">China</column>
+        </table>
+        <table name="typesfood">
+            <column name="ID">4</column>
+            <column name="Name">Italiana</column>
+        </table>
+        <table name="typesfood">
+            <column name="ID">5</column>
+            <column name="Name">Mexicana</column>
+        </table>
+        <table name="typesfood">
+            <column name="ID">6</column>
+            <column name="Name">Turca</column>
+        </table>
+        <table name="typesfood">
+            <column name="ID">7</column>
+            <column name="Name">India</column>
+        </table>
+        <!-- Tabla typesfoodrst -->
+        <table name="typesfoodrst">
+            <column name="ID_restaurant">23070793V</column>
+            <column name="ID_types_food">1</column>
+        </table>
+        <table name="typesfoodrst">
+            <column name="ID_restaurant">47391269A</column>
+            <column name="ID_types_food">2</column>
+        </table>
+        <table name="typesfoodrst">
+            <column name="ID_restaurant">12345678K</column>
+            <column name="ID_types_food">7</column>
+        </table>
+        <!-- Tabla users -->
+        <table name="users">
+            <column name="passwd">1</column>
+            <column name="type">1</column>
+            <column name="user_name">Yamir</column>
+            <column name="user_surname">Kumar</column>
+            <column name="user_nif">12345678K</column>
+            <column name="dir_user">Calle Cea Bermudez 17, Madrid CP:28030</column>
+            <column name="tel_number_user">911830344</column>
+            <column name="user_mail">indian@restaurante.com</column>
+        </table>
+        <table name="users">
+            <column name="passwd">1</column>
+            <column name="type">1</column>
+            <column name="user_name">restaurante</column>
+            <column name="user_surname"></column>
+            <column name="user_nif">23070793V</column>
+            <column name="dir_user">Calle del Barco 6 3ºD, Madrid 28015  </column>
+            <column name="tel_number_user">611221122</column>
+            <column name="user_mail">restaurante@restaurante.com</column>
+        </table>
+        <table name="users">
+            <column name="passwd">1</column>
+            <column name="type">2</column>
+            <column name="user_name">repartidor</column>
+            <column name="user_surname"></column>
+            <column name="user_nif">23131493V</column>
+            <column name="dir_user"></column>
+            <column name="tel_number_user">618172113</column>
+            <column name="user_mail">repartidor@repartidor.com</column>
+        </table>
+        <table name="users">
+            <column name="passwd">1</column>
+            <column name="type">0</column>
+            <column name="user_name">cliente</column>
+            <column name="user_surname"></column>
+            <column name="user_nif">44332211K</column>
+            <column name="dir_user">Calle buen suceso 2, Madrid CP:28015</column>
+            <column name="tel_number_user">611223344</column>
+            <column name="user_mail">cliente@cliente.com</column>
+        </table>
+        <table name="users">
+            <column name="passwd">1</column>
+            <column name="type">1</column>
+            <column name="user_name">Joe</column>
+            <column name="user_surname">Smith</column>
+            <column name="user_nif">47391269A</column>
+            <column name="dir_user">Calle de la Palma 32, Madrid CP:28015</column>
+            <column name="tel_number_user">915839263</column>
+            <column name="user_mail">american@restaurante.com</column>
+        </table>
+        <!-- Tabla user_rst -->
+        <table name="user_rst">
+            <column name="ID_user">23070793V</column>
+            <column name="dsc_rst">Restaurante de ejemplo, galardonado con el premio a la mejor tortilla de patatas de Madrid en el año 2015. </column>
+            <column name="name_rst">El restaurante</column>
+        </table>
+        <table name="user_rst">
+            <column name="ID_user">47391269A</column>
+            <column name="dsc_rst">Carne de vaca, fresca y picada a diario una sola vez. Pan artesano y patatas 100% caseras.</column>
+            <column name="name_rst">Hamburguesería Joe</column>
+        </table>
+        <table name="user_rst">
+            <column name="ID_user">12345678K</column>
+            <column name="dsc_rst">Considerado el mejor restaurante indio de la Zona</column>
+            <column name="name_rst">Restaurante indio</column>
+        </table>
+        <!-- Tabla user_trs -->
+        <table name="user_trs">
+            <column name="ID_user">23131493V</column>
+            <column name="vehicle">Bicicleta BH X6</column>
+        </table>
+    </database>
+</pma_xml_export>
