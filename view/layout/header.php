@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="css/index_view.css"  type="text/css" media="all" />
+
 <?php echo "<!-- HEADER HTML -->" ?>
 
 <div class="header">

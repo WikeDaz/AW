@@ -1,7 +1,14 @@
 
-<link rel="stylesheet" href="css/index_view.css"  type="text/css" media="all" />
+
+<head>
+	<link rel="stylesheet" href="css\index_view.css"  type="text/css" media="all" />
+	<?php
+	require_once("layout/library.php");
+	?>
+	<title>Index</title>
+</head>
+<body>
 <?php
-    require_once("layout/library.php");
     require_once("layout/header.php");
     ?>
 <table>
@@ -75,7 +82,7 @@
 		
    <div id="zonaImage">
 		<div id="zonaImageSup">
-			 	<tr><th><img src="../media/food1.jpg" ></th><th><img src="../media/food2.jpg"></th><th><img src="../media/food3.jpg"></th></tr>
+			 	<tr><th><img src="../media/food1.jpg" alt="" ></th><th><img src="../media/food2.jpg"></th><th><img src="../media/food3.jpg"></th></tr>
 			
 		</div>
 		<div id="zonaImageInf">

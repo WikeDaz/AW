@@ -1,0 +1,55 @@
+@charset "utf-8";
+/* CSS Document */
+@font-face{
+    font-family:AmaticSC-Regular;
+    src:url("../../media/fuentes/AmaticSC-Regular.ttf");
+}
+
+@font-face{
+    font-family:lobster;
+    src:url("../../media/fuentes/lobster.ttf"); 
+}
+.header h1{
+    font-family:AmaticSC-Regular;
+    font-size:80px; 
+    color:#4d654d;
+    text-align: center;
+}
+.tabla{
+	text-align: center; 
+	width: 100%;
+}
+table {    
+    border-spacing: 0;
+    border-collapse: collapse;
+    text-align: center;
+    width: 100%;
+	border :3;
+	border-color:#FFF;
+}
+           
+table tbody {
+       display: block;
+       height: 80px;
+      overflow-y: scroll;
+        }
+            
+table thead,
+tbody tr {
+    display: table;
+     width: 100%;
+     table-layout: fixed;
+ }
+             
+table thead {
+    width: calc( 100% - 1em)
+}
+ 
+             
+table thead th {
+	background: #ccc;
+ }
+
+ body{
+ 	align:center;
+  }

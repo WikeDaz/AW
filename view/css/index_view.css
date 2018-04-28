@@ -1,19 +1,19 @@
 @charset "utf-8";
 /* CSS Document */
 @font-face{
-	font-family:AmaticSC-Regular;
-	src:url("../../media/fuentes/AmaticSC-Regular.ttf");
+    font-family:AmaticSC-Regular;
+    src:url("../../media/fuentes/AmaticSC-Regular.ttf");
 }
 
 @font-face{
-	font-family:lobster;
-	src:url("../../media/fuentes/lobster.ttf");	
+    font-family:lobster;
+    src:url("../../media/fuentes/lobster.ttf"); 
 }
 .header h1{
-	font-family:AmaticSC-Regular;
-	font-size:80px; 
-	color:#4d654d;
-	text-align: center;
+    font-family:AmaticSC-Regular;
+    font-size:80px; 
+    color:#4d654d;
+    text-align: center;
 }
 #left{
 	float:left ;  
@@ -31,11 +31,12 @@
 	clear:both;
 	display: block;
 }
-
-img{
-	width: 100px;
-	height:100px;
+image{
+    height: 200px;
+    width: 200px;
 }
+
+
 
 
 input[name="slider-select-element"] {
@@ -48,16 +49,16 @@ input[name="slider-select-element"] {
 }
 
 #slider-container {
-    height: 15%;
+    height: 40%;
     margin: 0 auto;
     overflow: hidden;
-    text-align: left;
+    text-align:center;
     width: 80%;
 }
 
 .slider-element {
     float: left;
-    width: 33.333%;
+    width: 100%;
 }
 
 #element1:checked ~ #slider-arrows label:nth-child(2),
