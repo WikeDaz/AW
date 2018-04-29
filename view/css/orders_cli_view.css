@@ -25,7 +25,7 @@ table {
     text-align: center;
     width: 100%;
 	border :3;
-	border-color:#FFF;
+	border-color:black;
 }
            
 table tbody {
@@ -51,5 +51,5 @@ table thead th {
  }
 
  body{
- 	align:center;
+ 	text-align:center;
   }
