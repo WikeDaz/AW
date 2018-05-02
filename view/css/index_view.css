@@ -9,6 +9,28 @@
     font-family:lobster;
     src:url("../../media/fuentes/lobster.ttf"); 
 }
+
+/* footer*/
+
+.footer {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  margin-top: 40px;
+  border-top: 1px solid #eee;
+}
+
+/*enlaces*/
+.nav-justified{
+    list-style: none;
+    display: flex;
+    background-color:#eee;
+    font-family: lobster;
+}
+
+.nav-justified li {
+    width: 18%;
+   
+}
 .header h1{
     font-family:AmaticSC-Regular;
     font-size:80px; 
