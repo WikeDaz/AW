@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 24, 2018 at 07:42 PM
+-- Generation Time: May 05, 2018 at 07:14 PM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 5.6.34
 
@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `advertising` (
-  `ID_user` varchar(11) NOT NULL,
+  `ID` varchar(11) NOT NULL,
   `type` int(11) NOT NULL,
   `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -42,9 +42,21 @@ CREATE TABLE `advertising` (
 
 CREATE TABLE `comments` (
   `ID_restaurant` varchar(11) NOT NULL,
-  `ID_escritor` varchar(11) NOT NULL,
+  `ID_writer` varchar(11) NOT NULL,
   `comment` varchar(255) NOT NULL,
   `tiemstamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cookiesAD`
+--
+
+CREATE TABLE `cookiesAD` (
+  `ID` varchar(11) NOT NULL,
+  `type` int(11) NOT NULL,
+  `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -55,7 +67,8 @@ CREATE TABLE `comments` (
 
 CREATE TABLE `lines_orders` (
   `ID_order` int(11) NOT NULL,
-  `ID_offer` int(11) NOT NULL
+  `ID_offer` int(11) NOT NULL,
+  `count` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -84,7 +97,7 @@ CREATE TABLE `orders` (
   `ID_transport` varchar(11) NOT NULL,
   `ID_restaurant` varchar(11) NOT NULL,
   `ID_user` varchar(11) NOT NULL,
-  `date` datetime NOT NULL,
+  `date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `state` int(11) NOT NULL,
   `type` int(11) NOT NULL,
   `total_price` int(11) NOT NULL
@@ -119,14 +132,15 @@ CREATE TABLE `typesfoodrst` (
 --
 
 CREATE TABLE `users` (
-  `passwd` varchar(11) NOT NULL,
+  `passwd` varchar(256) NOT NULL,
   `type` tinyint(1) NOT NULL,
   `user_name` varchar(15) NOT NULL,
   `user_surname` varchar(30) NOT NULL,
   `user_nif` varchar(11) NOT NULL,
   `dir_user` varchar(50) NOT NULL,
   `tel_number_user` int(10) NOT NULL,
-  `user_mail` varchar(30) NOT NULL
+  `user_mail` varchar(30) NOT NULL,
+  `rd` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -160,16 +174,22 @@ CREATE TABLE `user_trs` (
 -- Indexes for table `advertising`
 --
 ALTER TABLE `advertising`
-  ADD KEY `ID_user` (`ID_user`),
+  ADD KEY `ID_user` (`ID`),
   ADD KEY `type` (`type`);
 
 --
 -- Indexes for table `comments`
 --
 ALTER TABLE `comments`
-  ADD PRIMARY KEY (`ID_restaurant`,`ID_escritor`,`tiemstamp`),
+  ADD PRIMARY KEY (`ID_restaurant`,`ID_writer`,`tiemstamp`),
   ADD KEY `ID_restaurant` (`ID_restaurant`),
-  ADD KEY `ID_escritor` (`ID_escritor`);
+  ADD KEY `ID_escritor` (`ID_writer`);
+
+--
+-- Indexes for table `cookiesAD`
+--
+ALTER TABLE `cookiesAD`
+  ADD KEY `type` (`type`);
 
 --
 -- Indexes for table `lines_orders`
@@ -257,7 +277,7 @@ ALTER TABLE `typesfood`
 -- Constraints for table `advertising`
 --
 ALTER TABLE `advertising`
-  ADD CONSTRAINT `advertising_ibfk_1` FOREIGN KEY (`ID_user`) REFERENCES `users` (`user_nif`),
+  ADD CONSTRAINT `advertising_ibfk_1` FOREIGN KEY (`ID`) REFERENCES `users` (`user_nif`),
   ADD CONSTRAINT `advertising_ibfk_2` FOREIGN KEY (`type`) REFERENCES `typesfood` (`ID`);
 
 --
@@ -265,7 +285,13 @@ ALTER TABLE `advertising`
 --
 ALTER TABLE `comments`
   ADD CONSTRAINT `comments_ibfk_1` FOREIGN KEY (`ID_restaurant`) REFERENCES `users` (`user_nif`),
-  ADD CONSTRAINT `comments_ibfk_2` FOREIGN KEY (`ID_escritor`) REFERENCES `users` (`user_nif`);
+  ADD CONSTRAINT `comments_ibfk_2` FOREIGN KEY (`ID_writer`) REFERENCES `users` (`user_nif`);
+
+--
+-- Constraints for table `cookiesAD`
+--
+ALTER TABLE `cookiesAD`
+  ADD CONSTRAINT `cookiesad_ibfk_1` FOREIGN KEY (`type`) REFERENCES `typesfood` (`ID`);
 
 --
 -- Constraints for table `lines_orders`
