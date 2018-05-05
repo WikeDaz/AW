@@ -19,7 +19,7 @@
                             echo "<td>De camino a casa</td>";
                             break;
                         case 3:
-                            echo "<td>Finalizado Que aprovche!!</td>";
+                            echo "<td>Finalizado, Que aprovche!!</td>";
                             break;
                     }
                     echo "<td>".$registro["date"]."</td>",

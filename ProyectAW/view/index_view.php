@@ -1,6 +1,8 @@
 <?php
+	session_start();
     require_once("layout/library.php");
-    require_once("layout/header.php");
+    
+	require_once("layout/header.php");
     echo "<h2>Últimas Ofertas Añadidas</h2>";
     echo "<p><ul>";
     foreach($matrizoffers as $registro){

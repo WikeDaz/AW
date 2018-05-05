@@ -17,12 +17,12 @@
     $matrizoffers=$offers->getOffers();
     
     if ($_SESSION["type_user"]==2){
-    foreach ($matrizorders as $registro){
-        $matrizdir["ID"] = $registro["ID"];
-        $matrizdir["origen"] = $user->getDir($registro["ID_restaurant"]);
-        $matrizdir["destino"] = $user->getDir($registro["ID_user"]);
-        
-    }}
+		foreach ($matrizorders as $registro){
+			$matrizdir["ID"] = $registro["ID"];
+			$matrizdir["origen"] = $user->getDir($registro["ID_restaurant"]);
+			$matrizdir["destino"] = $user->getDir($registro["ID_user"]);
+    	}
+	}
     require_once('../../view/orders_view.php');
 
 ?>
