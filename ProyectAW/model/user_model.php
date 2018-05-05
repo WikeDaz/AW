@@ -8,15 +8,17 @@
         private $vehicles;
         private $restaurants;
         
-        public function __construct($type){
-            if ($type == 0) {
-                require_once('config/dbconnect.php');
-            }
-            else if($type == 1){
-                require_once('../config/dbconnect.php');
-            } else {
-                require_once('../../config/dbconnect.php');
-
+        public function __construct($i){
+            switch ($i){
+                case 0:
+                    require_once('config/dbconnect.php');
+                    break;
+                case 1:
+                    require_once('../config/dbconnect.php');
+                    break;
+                case 2:
+                    require_once('../../config/dbconnect.php');
+                    break;
             }
             $this->db=ConnDB::getConn();
             $this->infouser = array();
@@ -26,10 +28,13 @@
             $this->restaurants = array ();
         }
         
-        public function checkUser($user,$pass){
-            $consulta=$this->db->query("SELECT type,user_nif FROM users WHERE user_nif='".$user."' AND passwd='".$pass."'");
+	public function checkUser($user,$pass){
+
+		$consulta=$this->db->query("SELECT type,user_nif,passwd FROM users WHERE user_nif='".$user."'");
+
+           // $consulta=$this->db->query("SELECT type,user_nif FROM users WHERE user_nif='".$user."' AND passwd='".password_verify($pass, )."'");
             $filas = $consulta-> fetch (PDO::FETCH_ASSOC);
-            if($filas != null){
+            if($filas != null && password_verify($pass, $filas["passwd"])){
                 $_SESSION["type_user"]=$filas["type"];
                 $_SESSION["ID_user"]=$filas["user_nif"];
                 return true;
@@ -61,7 +66,7 @@
                     break;
             }
         }
-        
+        /**
         public function confirmpasswd(){
             $consulta=$this->db->query("SELECT type,user_nif FROM users WHERE user_nif='".$_POST["nif"]."' AND passwd='".$_POST["pass"]."'");
             $filas = $consulta-> fetch (PDO::FETCH_ASSOC);
@@ -76,10 +81,10 @@
                 echo "error de contraseña redirigiendo";
                 return false;
             }
-        }
+	}**/
         
         public function registerUser(){
-            $consulta=$this->db->query("INSERT INTO users (passwd, type, user_name, user_surname, user_nif, dir_user, tel_number_user, user_mail) VALUES ('".$_POST["passwd"]."', ".$_POST["type"].", '".$_POST["name"]."', '".$_POST["surname"]."', '".$_POST["nif"]."', '".$_POST["direction"]."', ".$_POST["telephone"].", '".$_POST["email"]."');");
+            $consulta=$this->db->query("INSERT INTO users (passwd, type, user_name, user_surname, user_nif, dir_user, tel_number_user, user_mail) VALUES ('".password_hash($_POST["passwd"],PASSWORD_DEFAULT)."', ".$_POST["type"].", '".$_POST["name"]."', '".$_POST["surname"]."', '".$_POST["nif"]."', '".$_POST["direction"]."', ".$_POST["telephone"].", '".$_POST["email"]."');");
             if ($_POST["type"] != 0 && $consulta===TRUE){
                 switch ($_POST["type"]){
                     case  1:
@@ -96,19 +101,45 @@
             
         }
         
-        /**public function updateProfile(){
+        public function updateProfile($name,$surname,$telephone,$email,$dir,$id){
             
-            $consulta=$this->db->query("UPDATE INTO users SET user_name='".$_POST["name"]."', user_surname='".$_POST["surname"]."', tel_number_user='".$_POST["telephone"]."', user_mail='".$_POST["email"]."', ir_user='"$_POST["direction"]."' WHERE user_nif='".$_SESSION["nif"]."'");
-            $filas = $consulta-> fetch (PDO::FETCH_ASSOC);
+            $consulta=$this->db->query("UPDATE users SET user_name='".$name."', user_surname='".$surname."', tel_number_user=$telephone, user_mail='".$email."', dir_user='".$dir."' WHERE user_nif='".$id."'");
             
-            if($_SESSION["type"] == 1){
+          /**  if($_SESSION["type"] == 1){
                 $consulta=$this->db->query("UPDATE INTO user_rst SET dsc_rst='".$_POST["description"]."' WHERE ID_user='".$_SESSION["nif"]."'");
                 $filas = $consulta-> fetch (PDO::FETCH_ASSOC);
+            }**/
+        }
+        
+        public function getInfoRestaurant($id){
+            $consulta=$this->db->query("SELECT name_rst,dsc_rst FROM user_rst WHERE ID_user='".$id."'");
+            $filas = $consulta-> fetch (PDO::FETCH_ASSOC);
+            if($filas != null){
+                $infouser=$filas;
             }
-        }**/
+            return $infouser;
+        }
         
         public function getAllRestaurants(){
             $consulta=$this->db->query("SELECT * FROM users WHERE type=1");
+            
+            while ($filas = $consulta-> fetch (PDO::FETCH_ASSOC)){
+                $this->restaurants[]=$filas;
+            }
+            return $this->restaurants;
+        }
+        
+        public function getAllTransportsDir(){
+            $consulta=$this->db->query("SELECT dir_user FROM users WHERE type=2");
+            
+            while ($filas = $consulta-> fetch (PDO::FETCH_ASSOC)){
+                $this->restaurants[]=$filas;
+            }
+            return $this->restaurants;
+        }
+        
+        public function getLastRestaurants(){
+            $consulta=$this->db->query("SELECT * FROM users,user_rst WHERE type=1 AND ID_user=user_nif ORDER BY rd DESC LIMIT 5");
             
             while ($filas = $consulta-> fetch (PDO::FETCH_ASSOC)){
                 $this->restaurants[]=$filas;

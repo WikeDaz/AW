@@ -1,11 +1,8 @@
+<!--PROFILE RST VIEW-->
+<li><?php echo $inforst["name_rst"]?></li>
+<li><?php echo $inforst["dsc_rst"]?></li>
 <?php
-    echo "<ul><li><img src='/ProyectAW/media/".$_SESSION["ID_user"].".jpg'/></li>",
-    "<li>".$infouser["user_name"]."</li>",
-    "<li>".$infouser["user_surname"]."</li>",
-    "<li>".$infouser["tel_number_user"]."</li>",
-    "<li>".$infouser["dsc_rst"]."</li>",
-    "<li>".$infouser["user_mail"]."</li>",
-    "<li>".$infouser["dir_user"]."</li><li>";
+    
     foreach($matriztypesfood as $register){
         $flag = FALSE;
         foreach($matriztypesfoodchecked as $register2){
@@ -19,5 +16,4 @@
             echo "<input type='checkbox' name='type_rst' value='".$register["Name"]."' disabled/>".$register["Name"]."<br />";
         }
     }
-    echo "</li><li><a href='../templates/modify_perfil.php'>Modificar Perfil</a></li></ul>";
-    ?>
+?>

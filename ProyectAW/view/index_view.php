@@ -1,20 +1,34 @@
 <?php
-	session_start();
+    $lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
+    switch ($lang){
+        case "es":
+            require_once("translations/es_translation.php");
+            break;
+        case "en":
+            require_once("translations/en_translation.php");
+            break;
+        default:
+            require_once("translations/es_translation.php");
+            break;
+    }
     require_once("layout/library.php");
-    
-	require_once("layout/header.php");
-    echo "<h2>Últimas Ofertas Añadidas</h2>";
-    echo "<p><ul>";
-    foreach($matrizoffers as $registro){
-        echo"<li>". $registro["name"]."</li>";
-    }
-    echo "</ul></p>";
-    echo "<h2>Últimos Restaurantes Añadidos</h2>";
-    echo "<p><ul>";
-    foreach($matrizrestaurants as $registro){
-        echo"<li>". $registro["user_name"]."</li>";
-    }
-    echo "</ul></p>";
-    
+    if (isset($_SESSION["ID_user"]))
+    require_once("layout/header_loged.php");
+    else
+    require_once("layout/header.php");
+    ?><h2><?php echo LABEL_LASTOFFERS;?></h2>
+    <p><ul>
+    <?php foreach($matrizoffers as $registro){?>
+    <li><img src='/media/"<?php echo $registro["ID"];?>.jpg' /></li>
+<li><a href='/ProyectAW/view/templates/offerinfo.php?ifo=<?php echo $registro["ID"]?>'><?php echo $registro["name"]?></a></li>
+    <?php }?>
+    </ul></p>
+<h2><?php echo LABEL_LASTRESTAURANTS;?></h2>
+    <p><ul>
+    <?php foreach($matrizrestaurants as $registro){?>
+    <li><a href='/ProyectAW/view/templates/showRestaurant.php?id=<?php echo $registro["user_nif"]?>'><?php echo $registro["name_rst"];?></a></li>
+    <?php }?>
+    </ul></p>
+    <?php
     require_once("layout/footer.php");
 ?>

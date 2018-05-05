@@ -9,27 +9,15 @@
     $offers = new offers_model(0);
     $ad = new advertising_model(0);
     $typesfood = new typesfood_model(0);
-    $cookie=new cookie_controller();
+//    $cookie=new cookie_controller();
     
     $matrizIDs=array();
     $matrizTypes=array();
     $countMatrizTypes=array();
-    
-    if (isset($_SESSION["ID_user"])){
-        $numtypes=$typesfood->getNumTypes();
-        for($i=0; $i<=$numtypes; $i++){
-            $matrizTypes[$i]=$ad->countOffersAd($i);
-        }
-        $offers->initializeOffersbyType(max($matrizTypes));
-    } else if (isset($_COOKIE["cookie"])) {
-        $cookie->readCookie();
-    } else {
-        $offers->initializeAllOffers();
-        $cookie->createCookie();
-    }
-    
+    $numtypes=$typesfood->getNumTypes();
+    require_once('offers_initialize_mode_controller.php');
     $matrizoffers=$offers->getOffers();
-    $matrizrestaurants=$restaurant->getAllRestaurants();
+    $matrizrestaurants=$restaurant->getLastRestaurants();
 
     require_once('view/index_view.php');
 ?>

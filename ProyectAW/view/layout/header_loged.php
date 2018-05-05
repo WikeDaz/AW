@@ -1,28 +1,25 @@
-<?php echo "<!-- HEADER HTML -->"; ?>
+<!-- HEADER HTML -->
 <div class="header">
     <h1>MADELICIOSA</h1>
     <nav>
         <ul class="nav nav-justified">
+            <li><a href='/ProyectAW/view/templates/profile.php'>Profile</a></li>
+
 <?php switch ($_SESSION["type_user"]){
     case 0:
-        echo "<li><a href='/ProyectAW/index.php'>Buscar Ofertas</a></li>",
-            "<li><a href='/ProyectAW/view/templates/orders.php'>Pedidos</a></li>",
-            "<li><a href='/ProyectAW/view/templates/perfil.php'>Perfil</a></li>",
-            "<li><a href='/ProyectAW/controller/logout_controller.php'>Logout</a></li>";
-        break;
+    ?>
+    <li><a href='/ProyectAW/index.php'>Find Offers</a></li>
+<?php   if(isset($_COOKIE["cart"])){ ?>
+    <li><a href='/ProyectAW/view/templates/confirmCart.php'>Finish Buy</a></li>
+
+<?php  }   break;
     case 1:
-        echo "<li><a href='/ProyectAW/view/templates/perfil.php'>Perfil</a></li>",
-            "<li><a href='/ProyectAW/index.php'>Ofertas</a></li>",
-            "<li><a href='/ProyectAW/view/templates/orders.php'>Pedidos</a></li>",
-            "<li><a href='/ProyectAW/controller/logout_controller.php'>Logout</a></li>";
-        break;
-    case 2:
-        echo "<li><a href='/ProyectAW/view/templates/perfil.php'>Perfil</a></li>",
-            "<li><a href='/ProyectAW/view/templates/orders.php'>Pedidos</a></li>",
-            "<li><a href='/ProyectAW/controller/logout_controller.php'>Logout</a></li>";
-        break;
+    ?>
+    <li><a href='/ProyectAW/view/templates/offers.php'>Offers</a></li>
+        <?php break;
 }
-?>
+?>              <li><a href='/ProyectAW/view/templates/orders.php'>Orders</a></li>
+                <li><a href='/ProyectAW/controller/logout_controller.php'>Logout</a></li>
         </ul>
     </nav>
 </div>
