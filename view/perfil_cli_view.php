@@ -1,9 +1,8 @@
-<!doctype html>
-<html>
+
 <head>
-<meta charset="utf-8">
 <title>Perfil Cliente</title>
 	<link rel="stylesheet" href="css/perfil_cli_view.css">
+	
 </head>
 
 <body>
@@ -11,39 +10,32 @@
 		
 		<div id="center">
 				
-			
-				 
-				
+
 				<div id="imagen">
 				<?php
 				echo "<form id='perfil' action='updateperfil.php' method='post'>",
 				"<ul>",
-				"<li><img src='/aw/media/".$_SESSION["ID_user"].".jpg'/> <input type='file' value='/aw/media/".$_SESSION["ID_user"].".jpg'/>
-				</li></ul>";
+				"<li><img src='/ProyectAW/media/".$_SESSION["ID_user"].".jpg'/></li></ul>";
 				?>
 				</div>
 			
 			
 				<div id="descripcion">
-				<!--<ul>
-				<li><h2>Nombre</h2>
-			    <p>Descripciones</p></li>
-				</ul>-->
 				<?php
-				echo "<form id='perfil' action='updateperfil.php' method='post'>",
+				echo
 				"<ul>",
-				"<li><input name='name' type='text' size='50' value='".$infouser["user_name"]."' /></li>",
-				"<li><input name='surname' type='text' size='50' value='".$infouser["user_surname"]."' /></li>",
-				"<li><input name='telephone' type='text' size='50' value='".$infouser["tel_number_user"]."' /></li>",
-				"<li><input name='email' type='text' size='50' value='".$infouser["user_mail"]."' /></li>",
-				"<li><input name='direction' type='text' size='50' value='".$infouser["dir_user"]."' /></li></ul>";
+				"<li>".$infouser["user_name"]."</li>",
+			    "<li>".$infouser["user_surname"]."</li>",
+			    "<li>".$infouser["tel_number_user"]."</li>",
+			    "<li>".$infouser["user_mail"]."</li>",
+			    "<li>".$infouser["dir_user"]."</li>",
 				?>
 				</div>
 		
 				 <div id="zona">
                  <?php   
                  echo"<ul> <form> 
-                    <select name="zone">";
+                    <select name="zone" disabled="disabled">";
                 foreach($matrizzone as $register){
                     $flag = FALSE;
                     foreach($matrizzonechecked as $register2){
@@ -64,12 +56,11 @@
 		</div>
 		  
 		<div id="footer">
-
-			<ul><li><button type="submit">Actualizar Perfil</button></li></ul>
+			<?php
+			"<li><a href='../templates/modify_perfil.php'>Modificar Perfil</a></li></ul>";
+			?>
 		</div> 
 		
 		
 	
-             	
-</body>
-</html>
+         

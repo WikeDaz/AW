@@ -1,6 +1,14 @@
-<?php
+<head>
+    <link rel="stylesheet" href="css\header.css"  type="text/css" media="all" />
+    <?php
     require_once("../layout/library.php");
     require_once("../layout/header_loged.php");
+    ?>
+    <title>perfil</title>
+</head>
+<body>
+<?php
+    
     if(isset ($_SESSION["type_user"])){
         switch ($_SESSION["type_user"]){
             case 0:
