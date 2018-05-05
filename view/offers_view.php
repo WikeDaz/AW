@@ -1,25 +1,47 @@
+
+<head>
+	<link rel="stylesheet" href="css\offers_view.css"  type="text/css" media="all" />
+	<?php
+	require_once("layout/library.php");
+	?>
+	<title>Index</title>
+</head>
+<body>
 <?php
-    foreach($matrizoffers as $registro){
-        echo $registro["name"];
-        echo $registro["description"];
-        echo $registro["price"];
-    }
+    require_once("layout/header.php");
+    ?>
+
+
+<?php
+foreach($matrizoffers as $registro){
+	<table id="big">
+		<tr><th>
+		<table id="s">
+		<tr><th>Imagen</th><th>titulo</th><th>Descripcion</th><th >Precio Unidad</th></tr>
+		<tr><th><img src="../images/img/food1.jpg"></th><th>echo $registro["name"]</th><th>echo $registro["description"]</th><th>echo $registro["price"] /> </th></tr>
+		 <tr><th><img src="../images/img/food1.jpg"></th><th>echo $registro["name"]</th><th>echo $registro["description"]</th><th>echo $registro["price"] /> </th></tr>
+		 <tr><th><img src="../images/img/food1.jpg"></th><th>echo $registro["name"]</th><th>echo $registro["description"]</th><th>echo $registro["price"] /> </th></tr>
+		 <tr><th><img src="../images/img/food1.jpg"></th><th>echo $registro["name"]</th><th>echo $registro["description"]</th><th>echo $registro["price"] /> </th></tr>
+		 <tr><th><img src="../images/img/food1.jpg"></th><th>echo $registro["name"]</th><th>echo $registro["description"]</th><th>echo $registro["price"] /> </th></tr>
+		 <tr><th><img src="../images/img/food1.jpg"></th><th>echo $registro["name"]</th><th>echo $registro["description"]</th><th>echo $registro["price"] /> </th></tr>
+		 <tr><th><img src="../images/img/food1.jpg"></th><th>echo $registro["name"]</th><th>echo $registro["description"]</th><th>echo $registro["price"] /> </th></tr>
+		 <tr><th><img src="../images/img/food1.jpg"></th><th>echo $registro["name"]</th><th>echo $registro["description"]</th><th>echo $registro["price"] /> </th></tr>
+
+		</table>
+	}
 ?>
- <table width="90%" border=3 bordercolor="black" align="left">  
-            
-			<tr><th>Imagen</th><th align="center">titulo</th><th align="center" width="100%">Descripcion</th><th align="center" width="100%">Precio Unidad</th></tr>
-		 	<tr><th><img src="../images/img/food1.jpg"></th><th>titulo  1</th><th>hecho de carne </th><th><input type="number" step="1" min="1" max="1000"/> </th></tr>
-			 <tr><th><img src="../images/img/food2.jpg"></th><th>titulo  1</th><th>hecho de carne </th><th><input type="number" step="1" min="1" max="1000"/> </th></tr>
-			 <tr><th><img src="../images/img/food3.jpg"></th><th>titulo  1</th><th>hecho de carne </th><th><input type="number" step="1" min="1" max="1000"/> </th></tr>
-			 <tr><th><img src="../images/img/food4.jpg"></th><th>titulo  1</th><th>hecho de carne </th><th><input type="number" step="1" min="1" max="1000"/> </th></tr>
-			 <tr><th><img src="../images/img/food6.jpg"></th><th>titulo  1</th><th>hecho de carne </th><th><input type="number" step="1" min="1" max="1000"/> </th></tr>
-			 <tr><th><img src="../images/img/food4.jpg"></th><th>titulo  1</th><th>hecho de carne </th><th><input type="number" step="1" min="1" max="1000"/> </th></tr>
-			 <tr><th><img src="../images/img/food5.jpg"></th><th>titulo  1</th><th>hecho de carne </th><th><input type="number" step="1" min="1" max="1000"/> </th></tr>
-			
-           
-        </table>
-		<table width="10%" border=1 align="left">
-			
-			<tr><th><button type="submit">Actualizar oferta</button></th></tr>
-			<tr><th><button type="submit">Add oferta</button></th></tr>
+		</th>
+		<th>
+		<table id="i" >
+			 <?php
+            echo "</ul><li><a href='offers_view_mod.php'>Actualizar oferta</a></li></ul>";
+            echo"</ul><li><a href='add_offer_view_mod.php'>Add oferta</a></li></ul>";
+            ?>
+		</table>
+	</th>
+	
 	</table>
+
+<?php
+    require_once("layout/footer.php");
+?>
