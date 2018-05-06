@@ -1,8 +1,15 @@
+
 <?php
     require_once("../layout/library.php");
+?>
+	<body>
+	<div id='contenedor'>
+	
+<?php
     if (isset ($_SESSION["type_user"])){
     require_once("../layout/header_loged.php");
     echo "<!-- offer view -->";
+	?> <div id='offer'> <?php
     switch ($_SESSION["type_user"]){
         case 0:
             require_once('offers_cli_view.php');
@@ -12,11 +19,13 @@
             require_once('offers_rst_view.php');
             break;
     }
+	
     } else {
         require_once("../layout/header.php");
+	?> <div id='offer'> <?php
         ?>
-<ul><li><?php echo $inforestaurant["name_rst"];?></li>
-<li><?php echo $inforestaurant["dsc_rst"];?></li></ul>
+		<ul><li><?php echo $inforestaurant["name_rst"];?></li>
+		<li><?php echo $inforestaurant["dsc_rst"];?></li></ul>
 
 
 <ul>
@@ -28,9 +37,11 @@
 <?php
     }?>
 </ul>
-
+</div>
 <?php
     }
     
 
-?>
+?>	
+	</div>
+	</body>

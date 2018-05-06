@@ -22,8 +22,9 @@
         
         public function initializeCommentsByRestaurant($id){
                     $consulta=$this->db->query("SELECT * FROM comments WHERE ID_restaurant='".$id."'");
-                           
+ 
             while ($filas = $consulta-> fetch (PDO::FETCH_ASSOC)){
+				
                 $this->comments[]=$filas;
             }
         }

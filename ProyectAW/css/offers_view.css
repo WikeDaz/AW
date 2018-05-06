@@ -1,0 +1,57 @@
+@charset "utf-8";
+/* CSS Document */
+@font-face{
+    font-family:AmaticSC-Regular;
+    src:url("../../media/fuentes/AmaticSC-Regular.ttf");
+}
+
+@font-face{
+    font-family:lobster;
+    src:url("../../media/fuentes/lobster.ttf"); 
+}
+
+/* footer*/
+
+.footer {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  margin-top: 40px;
+  border-top: 1px solid #eee;
+}
+
+/*enlaces*/
+.nav-justified{
+    list-style: none;
+    display: flex;
+    background-color:#eee;
+    font-family: lobster;
+}
+
+.nav-justified li {
+    width: 18%;
+   
+}
+.header h1{
+    font-family:AmaticSC-Regular;
+    font-size:80px; 
+    color:#4d654d;
+    text-align: center;
+}
+
+#s{
+  width:95%;
+  border:3;
+  bordercolor:black;
+  text-align: center;
+  overflow-y: auto;
+  height:370px;
+ 
+}
+#i{
+  width:5%;
+   border:1 ;
+}
+#big{
+  width:100%;
+  align:center;
+}
