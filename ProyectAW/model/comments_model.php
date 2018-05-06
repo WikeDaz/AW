@@ -2,10 +2,9 @@
     class comments_model {
         private $db;
         private $comments;
-        
         public function __construct($i){
             if ($i == 0){
-                require_once('config/dbconnect.php');
+                require_once('../config/dbconnect.php');
             } else {
                 require_once('../../config/dbconnect.php');
             }
@@ -21,8 +20,8 @@
             }
         }
         
-        public function initializeCommentsByRestaurant($idRestaurant){
-                    $consulta=$this->db->query("SELECT * FROM comments WHERE ID_restaurant='".$idRestaurant."'");
+        public function initializeCommentsByRestaurant($id){
+                    $consulta=$this->db->query("SELECT * FROM comments WHERE ID_restaurant='".$id."'");
                            
             while ($filas = $consulta-> fetch (PDO::FETCH_ASSOC)){
                 $this->comments[]=$filas;
@@ -32,6 +31,10 @@
         public function getComments(){
             return $this->comments;
         }
+		
+		public function addComment($id,$ID_user,$comentario){		
+			 $consulta=$this->db->query("INSERT INTO comments (ID_restaurant, ID_writer, comment) VALUES ('".$id."', ".$ID_user.", '".$comentario."');");
+		}
     }
     
 ?>

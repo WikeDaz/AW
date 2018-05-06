@@ -5,7 +5,7 @@
     session_start();
     $offers = new offers_model(1);
     $food = new typesfood_model(1);
-
+	
     $offer;
     $id=$_GET["ID"];
     $mode=$_GET["m"];
