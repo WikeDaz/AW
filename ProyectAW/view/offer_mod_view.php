@@ -1,8 +1,6 @@
-<?php
-    require_once("layout/library.php");
-    require_once("layout/header_loged.php");
-    ?>
+
     <!-- offer MOD view -->
+<div id='prin'>
     <form action="/ProyectAW/controller/updates.php" method="POST">
 <input name="whatmod" type="text" value="0" hidden readonly />
 
@@ -24,6 +22,5 @@
 </slect></li>
 <li><input type="submit" value='Update Offer' /></li>
     </ul></form>
-<?php
-    require_once("layout/footer.php");
-?>
+</div>
+

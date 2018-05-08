@@ -1,10 +1,4 @@
-<?php
-    require_once("../layout/library.php");
-    if (isset($_SESSION["ID_user"]))
-    require_once("../layout/header_loged.php");
-    else
-    require_once("../layout/header.php");
-?>
+
 <!-- offer view -->
     
     <ul><li><?php echo $inforestaurant["name_rst"];?></li>
@@ -26,6 +20,3 @@
     }?>
     </ul>
 
-    <?php
-    require_once("../layout/footer.php");
-?>

@@ -1,58 +1,25 @@
-<?php
-    require_once("../layout/library.php");
-    require_once("../layout/header.php");
-    ?>
-<body>
-<div id="div-prin">
-  <section class="center width100">
+<div id="prin">
     <h2> Unete a nuestra red </h2>
     <form id="login" action="/ProyectAW/controller/register_controller.php" method="post">
-      <table class="width100">
-        <tr>
-            <td><input name="name" type="text" size="25" placeholder="Nombre" required /></td>
-        </tr>
-        <tr>
-            <td><input name="surname" type="text" size="25" placeholder="Apellidos" required /></td>
-        </tr>
-        <tr>
-            <td><input name="direction" type="text" size="25" placeholder="Direccion" required /></td>
-        </tr>
-        <tr>
-            <td><input name="email" type="email" size="25" placeholder="email" required /></td>
-        </tr>
-        <tr>
-            <td><input name="telephone" type="text" size="25" placeholder="Telefono" required /></td>
-        </tr>
-        <tr>
-          <td><input name="nif" type="text" size="25" placeholder="NIF" required /></td>
-        </tr>
-        <tr>
-            <td><textarea name="description" placeholder="Si eres un Restaurante rellena la descripcion de su restaurante."></textarea></td>
-        </tr>
-        <tr>
-          <td colspan="2"><input name="passwd" type="password" placeholder="Contraseña" size="40" required /></td>
-        </tr>
-        <tr>
-            <td colspan="2"><input name="confirm_pass" type="password" placeholder="Repite la Contraseña" size="40" required /></td>
-        </tr>
-        <tr>
-<td>Soy:
+      <ul>
+        <li><input name="name" type="text" size="25" placeholder="Nombre" required /></li>
+            <li><input name="surname" type="text" size="25" placeholder="Apellidos" required /></li>
+            <li><input name="direction" type="text" size="25" placeholder="Direccion" required /></li>
+            <li><input name="email" type="email" size="25" placeholder="email" required /></li>
+            <li><input name="telephone" type="text" size="25" placeholder="Telefono" required /></li>
+          <li><input name="nif" type="text" size="25" placeholder="NIF" required /></li>
+            <li><textarea name="description" placeholder="Si eres un Restaurante rellena la descripcion de su restaurante."></textarea></li>
+          <li><input name="passwd" type="password" placeholder="Contraseña" size="40" required /></li>
+            <li><input name="confirm_pass" type="password" placeholder="Repite la Contraseña" size="40" required /></li>
+<li>Soy:
                 <select name="type" required />
                     <option value="0">Cliente</option>
                     <option value="1">Restaurante</option>
                     <option value="2">Transportista</option>
                 </select>
-            </td>
-        </tr>
-        <tr>
-            <td><input type="checkbox" name="conditions" required/> He leido y acepto <a href="terms.html">nuestros terminos y condiciones</a>.</td>
-        </tr>
-        <tr>
-          <td colspan="2" ><input type="submit" value="Registrarse"/></td>
-        </tr>
-      </table>
+            </li>
+            <li><input type="checkbox" name="conditions" required/> He leido y acepto <a href="terms.html">nuestros terminos y condiciones</a>.</li>
+          <li><input type="submit" value="Registrarse"/></li>
+        </ul>
     </form>
-  </section>
-<?php
-    require_once("../layout/footer.php");
-    ?>
+</div>

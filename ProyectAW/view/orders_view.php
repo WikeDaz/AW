@@ -1,14 +1,9 @@
+<div id='prin'>
+<!-- orders view -->
 <?php
-    require_once("../layout/library.php");
-?>
-	<body>
-	<div id='contenedor'>
-<?php
-    require_once("../layout/header_loged.php");
     
     if (isset ($_SESSION["type_user"])){
-?>
-<div id='order'>
+        ?>
 <table>
 <?php
     
@@ -106,10 +101,5 @@ case 2: //transportista
     break;
     }?>
     </table>
-	</div>
-    <?php }
-    require_once("../layout/footer.php");
-    ?>
-		
+<?php }    ?>
 </div>
-</body>

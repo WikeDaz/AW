@@ -14,4 +14,7 @@
     define('LABEL_LASTRESTAURANTS','You are Welcome Restaurat...');
     define('LABEL_ISFC','LogIn to finalize the order');
     define('LABEL_UPI','User or Password Incorrect');
+    define('LABEL_WELLCOME_TITLE','Wellcome to Madeliciosa');
+    define('LABEL_WELLCOME_DESCRIPTION','Wellcome to Madeliciosa your new page of food');
+
     ?>

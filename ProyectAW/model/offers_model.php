@@ -4,11 +4,6 @@
         private $offers;
         private $types;
         
-        /**private $name;
-        private $description;
-        private $price;
-        private $type;*/
-        
         public function __construct($i){
             switch ($i){
                 case 0:
@@ -45,7 +40,7 @@
         }
         
         public function initializeAllOffers(){
-            $consulta=$this->db->query("SELECT * FROM offers LIMIT 5");
+            $consulta=$this->db->query("SELECT * FROM offers WHERE hidden=0 LIMIT 5");
             
             while ($filas = $consulta-> fetch (PDO::FETCH_ASSOC)){
                 $this->offers[]=$filas;
@@ -53,7 +48,7 @@
         }
         
         public function initializeOffersbyUser($id){
-            $consulta=$this->db->query("SELECT * FROM offers where ID_restaurant='".$id."'");
+            $consulta=$this->db->query("SELECT * FROM offers where hidden=0 AND ID_restaurant='".$id."'");
             
             while ($filas = $consulta-> fetch (PDO::FETCH_ASSOC)){
                 $this->offers[]=$filas;
@@ -61,7 +56,7 @@
         }
         
         public function initializeOffersbyType($type){
-            $consulta=$this->db->query("SELECT * FROM offers where type=".$type);
+            $consulta=$this->db->query("SELECT * FROM offers where hidden=0 AND type=".$type);
             
             while ($filas = $consulta-> fetch (PDO::FETCH_ASSOC)){
                 $this->offers[]=$filas;
@@ -100,6 +95,10 @@
         
         public function getOffers(){
             return $this->offers;
+        }
+        
+        public function eraseOffer($i){
+            $consulta=$this->db->query("UPDATE offers SET hidden=1 where ID='".$i."'");
         }
 
     }

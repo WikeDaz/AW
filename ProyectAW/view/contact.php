@@ -1,7 +1,4 @@
-<?php
-    require_once("../layout/library.php");
-    require_once("../layout/header.php");
-    ?>
+<!--Contact View-->
 <body>
 <div id="div-prin">
   <section class="center width100">
@@ -11,6 +8,4 @@
 <?php require_once("../forms/contact_form_view.php");?>
 
 </section>
-<?php
-    require_once("../layout/footer.php");
-    ?>
+

@@ -1,34 +1,41 @@
-
-<?php
-    require_once("../layout/library.php");
-?>
-	<body>
-	<div id='contenedor'>
-	
+<!-- offer view -->
+<div id='prin'>
 <?php
     if (isset ($_SESSION["type_user"])){
-    require_once("../layout/header_loged.php");
-    echo "<!-- offer view -->";
-	?> <div id='offer'> <?php
     switch ($_SESSION["type_user"]){
         case 0:
-            require_once('offers_cli_view.php');
-            break;
-        case 1:
+            ?>
+<div id='inforst'>
+        <ul><li><?php echo $inforestaurant["name_rst"];?></li>
+<li><?php echo $inforestaurant["dsc_rst"];?></li></ul>
+</div>
+<div id='ofrs'>
+
+            <?php require_once('offers_cli_view.php'); ?>
+                </div>
+            <?php break;
+        case 1: ?>
+<div id='ofrs_form'>
+<?php
             require_once('forms/offer_form_view.php');
+?>
+</div>
+<div id='ofrs'>
+<?php
             require_once('offers_rst_view.php');
+    ?>
+</div>
+<?php
             break;
     }
-	
     } else {
-        require_once("../layout/header.php");
-	?> <div id='offer'> <?php
         ?>
-		<ul><li><?php echo $inforestaurant["name_rst"];?></li>
-		<li><?php echo $inforestaurant["dsc_rst"];?></li></ul>
-
-
+<div id='inforst'>
+<ul><li><?php echo $inforestaurant["name_rst"];?></li>
+<li><?php echo $inforestaurant["dsc_rst"];?></li></ul>
 <ul>
+</div>
+<div id='ofrs'>
 <?php
     foreach($matrizoffers as $infooffer){
         ?>
@@ -40,8 +47,7 @@
 </div>
 <?php
     }
-    
+    require_once("../layout/footer.php");
 
-?>	
-	</div>
-	</body>
+?>
+</div>

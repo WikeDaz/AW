@@ -1,7 +1,4 @@
-<?php
-    require_once("../layout/library.php");
-    require_once("../layout/header_loged.php");
-?>
+<div id='prin'>
 <!--PROFILE MOD VIEW-->
 <form id='perfil' action='/ProyectAW/controller/updates.php' method='post'>
 <ul>
@@ -31,6 +28,4 @@
     }
     ?>
 <li><input type='submit' value='Modificar Perfil'/></li></ul>
-<?php
-    require_once("../layout/footer.php");
-?>
+</div>

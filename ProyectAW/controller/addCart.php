@@ -2,7 +2,6 @@
     require_once('cookie_controller.php');
 
     $selected=$_GET["ifo"];
-
     $cookie="cart";
     if (isset($_COOKIE["cart"])){
         $cart=readCookie("cart");
@@ -15,23 +14,24 @@
                 $key["c"]+=1;
                 $flag=true;
             }
-            $cartarrayupdated[]=array("i"=>$key["i"],"c"=>$key["c"]);
+            $cartarrayupdated[]=array("i"=>(int)$key["i"],"c"=>$key["c"]);
         }
         if (!$flag){
-            $cartarrayupdated[]=array("i"=>$selected, "c"=>1);
+            $cartarrayupdated[]=array("i"=>(int)$selected, "c"=>1);
         }
         $cartarray=$cartarrayupdated;
+        var_dump($cartarray);
     } else {
-        $cartarrayupdated[]=array("i"=>$selected, "c"=>1);
-        $cartarray=$cartarrayupdated;
+        $cartarray[]=array("i"=>(int)$selected, "c"=>1);
+        var_dump($cartarray);
     }
     $value=serialize($cartarray);
-
-    $expire=time()+3600*365;
+    var_dump ($value);
+    $expire=(time()+3600*12);
     $route="/ProyectAW";
-    $domain="localhost";
+    $domain=
     $security=FALSE;
-    createCookie($cookie,$value,$expire,$route,$domain,$security);
+    createCookie("cart",$value,$expire,$route,$domain,$security);
     header('Location: /ProyectAW/view/templates/offerinfo.php?ifo='.$selected);
     
 ?>

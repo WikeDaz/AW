@@ -11,9 +11,9 @@
 
     
     if (isset($_SESSION["type_user"])){
-        $ad->insertAd($offers->getType($selected),"advertising",$_SESSION["ID_user"]);
+        $ad->insertAdMongo($offers->getType($selected),"sessionad",$_SESSION["ID_user"]);
     } else {
-        $ad->insertAd($offers->getType($selected),"cookiesAD",readCookie("cookieMadeliciosa"));
+        $ad->insertAdMongo($offers->getType($selected),"cookiesad",readCookie("cookieMadeliciosa"));
     }
     
     $offer;

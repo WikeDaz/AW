@@ -14,6 +14,8 @@
     define('LABEL_LASTRESTAURANTS','Bienvenido');
     define('LABEL_ISFC','Inicie sesión para finalizar el pedido');
     define('LABEL_UPI','Lo sentimos usuario o contraseña incorrecta');
+    define('LABEL_WELLCOME_TITLE','Bienvenido a Madeliciosa');
+    define('LABEL_WELLCOME_DESCRIPTION','Bienvenido a la pagina principal de madeliciosa Madeliciosa');
 
     ?>
 

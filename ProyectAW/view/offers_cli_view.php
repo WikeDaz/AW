@@ -1,11 +1,9 @@
 <!-- offer CLI view -->
+<div id='prin'>
 <ul>
-<?php
-    foreach($matrizoffers as $infooffer){ ?>
-<li><a href='showanoffer.php?ID=".$infooffer["ID"]."'><img src='/ProyectAW/media/<?php echo $infooffer["ID"];?>.jpg'/></a></li>
-        <li><?php echo $infooffer["name"];?></li>
-        <li><?php echo $infooffer["price"];?></li>
-        <li><a href='/ProyectAW/controller/addCart.php?ifo=<?php echo $infooffer['ID'];?>'>Añadir oferta</a></li>
-    <?php }?>
+    <?php foreach($matrizoffers as $registro){?>
+<li><img src='/media/"<?php echo $registro["ID"];?>.jpg' /></li>
+<li><a href='/ProyectAW/view/templates/offerinfo.php?ifo=<?php echo $registro["ID"]?>'><?php echo $registro["name"]?></a></li>
+<?php }?>
     </ul>
-
+</div>

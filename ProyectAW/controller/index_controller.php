@@ -16,6 +16,7 @@
     $countMatrizTypes=array();
     $numtypes=$typesfood->getNumTypes();
     require_once('offers_initialize_mode_controller.php');
+
     $matrizoffers=$offers->getOffers();
     $matrizrestaurants=$restaurant->getLastRestaurants();
 

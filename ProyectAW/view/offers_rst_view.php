@@ -1,3 +1,4 @@
+<div id='prin'>
 <!-- offer RST view -->
 <ul>
 <?php
@@ -12,4 +13,4 @@
             <li><a href='/ProyectAW/controller/offer_restaurant.php?ID=<?php echo $infooffer["ID"];?>&m=1'>Eliminar oferta</a></li>
     <?php }?>
     </ul>
-
+</div>

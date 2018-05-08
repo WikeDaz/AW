@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: May 05, 2018 at 07:14 PM
+-- Generation Time: May 07, 2018 at 02:01 AM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 5.6.34
 
@@ -71,6 +71,14 @@ CREATE TABLE `lines_orders` (
   `count` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `lines_orders`
+--
+
+INSERT INTO `lines_orders` (`ID_order`, `ID_offer`, `count`) VALUES
+(3, 2, 0),
+(3, 3, 0);
+
 -- --------------------------------------------------------
 
 --
@@ -83,8 +91,22 @@ CREATE TABLE `offers` (
   `name` varchar(20) NOT NULL,
   `price` int(11) NOT NULL,
   `description` varchar(75) NOT NULL,
-  `type` int(11) NOT NULL
+  `type` int(11) NOT NULL,
+  `hidden` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `offers`
+--
+
+INSERT INTO `offers` (`ID`, `ID_restaurant`, `name`, `price`, `description`, `type`, `hidden`) VALUES
+(1, '23070793V', 'Tortilla de patatas', 7, 'Tortilla de patatas de 4 huevos', 1, 1),
+(2, '23070793V', 'Croquetas de jamï¿½n', 9, ' Croquetas de jamï¿½n ibï¿½rico, 6 unidades', 6, 0),
+(3, '23070793V', 'pulpo a la gallega', 12, 'Pulpo traído directamente desde galicia', 1, 1),
+(6, '47391269A', 'Hamburguesa CAMBA', 15, 'Plátano dorado, emulsión de Ron Santa Teresa y rodaja de queso de cabra.', 2, 0),
+(7, '47391269A', 'Hamburguesa CHIPOTLE', 13, 'Guacamole casero, fresco y rústico, acompañado de salsa Chipotle ', 2, 0),
+(11, '47391269A', 'Hamburguesa Kevin Ba', 11, 'Carne en la plancha mezclada con trozos de bacon, cebolla y queso', 2, 0),
+(12, '47391269A', 'Hamburguesa YANKEE', 12, 'Carne de vaca, costillas de cerdo, queso, cebolla y lechuga batavia.', 2, 0);
 
 -- --------------------------------------------------------
 
@@ -103,6 +125,13 @@ CREATE TABLE `orders` (
   `total_price` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `orders`
+--
+
+INSERT INTO `orders` (`ID`, `ID_transport`, `ID_restaurant`, `ID_user`, `date`, `state`, `type`, `total_price`) VALUES
+(3, '', '23070793V', '44332211K', '2018-05-08 21:00:00', 0, 0, 65);
+
 -- --------------------------------------------------------
 
 --
@@ -114,6 +143,19 @@ CREATE TABLE `typesfood` (
   `Name` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `typesfood`
+--
+
+INSERT INTO `typesfood` (`ID`, `Name`) VALUES
+(1, 'Española'),
+(2, 'Americana'),
+(3, 'China'),
+(4, 'Italiana'),
+(5, 'Mexicana'),
+(6, 'Turca'),
+(7, 'India');
+
 -- --------------------------------------------------------
 
 --
@@ -124,6 +166,15 @@ CREATE TABLE `typesfoodrst` (
   `ID_restaurant` varchar(11) NOT NULL,
   `ID_types_food` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `typesfoodrst`
+--
+
+INSERT INTO `typesfoodrst` (`ID_restaurant`, `ID_types_food`) VALUES
+('23070793V', 1),
+('47391269A', 2),
+('12345678K', 7);
 
 -- --------------------------------------------------------
 
@@ -143,6 +194,17 @@ CREATE TABLE `users` (
   `rd` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`passwd`, `type`, `user_name`, `user_surname`, `user_nif`, `dir_user`, `tel_number_user`, `user_mail`, `rd`) VALUES
+('$2y$10$qIQOKuxOfmDcK.KE6rJYTOebwxcf03xOdlGbsTC1PfEdLhUU3GCUa', 1, 'Yamir', 'Kumar', '12345678K', 'Calle Cea Bermudez 17, Madrid CP:28030', 911830344, 'indian@restaurante.com', '2018-05-05 17:41:45'),
+('$2y$10$qIQOKuxOfmDcK.KE6rJYTOebwxcf03xOdlGbsTC1PfEdLhUU3GCUa', 1, 'restaurante', '', '23070793V', 'Calle del Barco 6 3ºD, Madrid 28015  ', 611221122, 'restaurante@restaurante.com', '2018-05-05 17:41:45'),
+('$2y$10$qIQOKuxOfmDcK.KE6rJYTOebwxcf03xOdlGbsTC1PfEdLhUU3GCUa', 2, 'repartidor', '', '23131493V', '', 618172113, 'repartidor@repartidor.com', '2018-05-05 17:41:45'),
+('$2y$10$qIQOKuxOfmDcK.KE6rJYTOebwxcf03xOdlGbsTC1PfEdLhUU3GCUa', 0, 'cliente', '', '44332211K', 'Calle buen suceso 2, Madrid CP:28015', 611223344, 'cliente@cliente.com', '2018-05-05 17:41:45'),
+('1', 1, 'Joe', 'Smith', '47391269A', 'Calle de la Palma 32, Madrid CP:28015', 915839263, 'american@restaurante.com', '2018-05-05 17:41:45');
+
 -- --------------------------------------------------------
 
 --
@@ -155,6 +217,15 @@ CREATE TABLE `user_rst` (
   `name_rst` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `user_rst`
+--
+
+INSERT INTO `user_rst` (`ID_user`, `dsc_rst`, `name_rst`) VALUES
+('23070793V', 'Restaurante de ejemplo, galardonado con el premio a la mejor tortilla de patatas de Madrid en el año 2015. ', 'El restaurante'),
+('47391269A', 'Carne de vaca, fresca y picada a diario una sola vez. Pan artesano y patatas 100% caseras.', 'Hamburguesería '),
+('12345678K', 'Considerado el mejor restaurante indio de la Zona', 'Restaurante ind');
+
 -- --------------------------------------------------------
 
 --
@@ -165,6 +236,13 @@ CREATE TABLE `user_trs` (
   `ID_user` varchar(11) NOT NULL,
   `vehicle` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `user_trs`
+--
+
+INSERT INTO `user_trs` (`ID_user`, `vehicle`) VALUES
+('23131493V', 'Bicicleta BH X6');
 
 --
 -- Indexes for dumped tables
@@ -255,19 +333,19 @@ ALTER TABLE `user_trs`
 -- AUTO_INCREMENT for table `offers`
 --
 ALTER TABLE `offers`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `typesfood`
 --
 ALTER TABLE `typesfood`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Constraints for dumped tables

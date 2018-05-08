@@ -1,22 +1,22 @@
 <?php
-    
-    if (isset($_SESSION["ID_user"])){
+    $id;
+    $collection;
+    if (isset($_SESSION["ID_user"]) || isset($_COOKIE["cookieMadeliciosa"])){
+        if (isset($_SESSION["ID_user"])){
+            $id=$_SESSION["ID_user"];
+            $collection="sessionad";
+        } else{
+            $id=readCookie("cookieMadeliciosa");
+            $collection="cookiesad";
+        }
         for($i=0; $i<=$numtypes; $i++){
-            $matrizTypes[$i]=$ad->countOffersAd($_SESSION["ID_user"],$i,"advertising");
+            $matrizTypes[$i]=$ad->countOffersAdMongo($i,$collection,$id);
         }
         $offers->initializeOffersbyType(array_search (max($matrizTypes), $matrizTypes));
-        if ($offers->getOffers()== null){
+        if ($offers->getOffers() == null){
             $offers->initializeAllOffers();
         }
-    } else if (isset($_COOKIE["cookieMadeliciosa"])) {
-        $id=readCookie("cookieMadeliciosa");
-        for($i=0; $i<=$numtypes; $i++){
-            $matrizTypes[$i]=$ad->countOffersAd($id,$i,"cookiesAD");
-        }
-        $offers->initializeOffersbyType(array_search (max($matrizTypes), $matrizTypes));
-        if ($offers->getOffers()== null){
-            $offers->initializeAllOffers();
-        }
+        
     } else {
         $offers->initializeAllOffers();
         $cookie="cookieMadeliciosa";
@@ -26,5 +26,6 @@
         $domain=
         $security=FALSE;
         createCookie($cookie,$value,$expire,$route,$domain,$security);
+        $ad->insertAdMongo(-1,"cookiesad",$value);
     }
 ?>
