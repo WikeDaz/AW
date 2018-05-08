@@ -3,7 +3,7 @@
         private $manager;
        
         public function __construct($i){
-            $this->manager = new MongoDB\Driver\Manager("mongodb://localhost:27017");
+            $this->manager = new MongoDB\Driver\Manager("mongodb://binarybyte:27017");
         }
         
         public function insertAdMongo($type,$collection,$id){
