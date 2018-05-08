@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: May 07, 2018 at 02:01 AM
+-- Generation Time: May 08, 2018 at 07:45 PM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 5.6.34
 
@@ -34,6 +34,17 @@ CREATE TABLE `advertising` (
   `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `advertising`
+--
+
+INSERT INTO `advertising` (`ID`, `type`, `time`) VALUES
+('44332211K', 6, '2018-05-07 00:16:12'),
+('44332211K', 6, '2018-05-07 00:56:57'),
+('44332211K', 6, '2018-05-07 00:56:58'),
+('44332211K', 6, '2018-05-07 00:56:59'),
+('44332211K', 6, '2018-05-07 00:57:00');
+
 -- --------------------------------------------------------
 
 --
@@ -59,6 +70,20 @@ CREATE TABLE `cookiesAD` (
   `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `cookiesAD`
+--
+
+INSERT INTO `cookiesAD` (`ID`, `type`, `time`) VALUES
+('2', 1, '2018-05-07 00:16:40'),
+('', 1, '2018-05-07 00:23:31'),
+('3', 2, '2018-05-07 01:04:26'),
+('3', 2, '2018-05-07 01:04:29'),
+('3', 2, '2018-05-07 01:04:30'),
+('3', 6, '2018-05-07 01:04:46'),
+('3', 6, '2018-05-07 01:04:47'),
+('3', 6, '2018-05-07 01:04:48');
+
 -- --------------------------------------------------------
 
 --
@@ -77,7 +102,8 @@ CREATE TABLE `lines_orders` (
 
 INSERT INTO `lines_orders` (`ID_order`, `ID_offer`, `count`) VALUES
 (3, 2, 0),
-(3, 3, 0);
+(3, 3, 0),
+(4, 2, 8);
 
 -- --------------------------------------------------------
 
@@ -130,7 +156,8 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`ID`, `ID_transport`, `ID_restaurant`, `ID_user`, `date`, `state`, `type`, `total_price`) VALUES
-(3, '', '23070793V', '44332211K', '2018-05-08 21:00:00', 0, 0, 65);
+(3, '', '23070793V', '44332211K', '2018-05-08 21:00:00', 0, 0, 65),
+(4, '', '23070793V', '44332211K', '2018-05-07 02:57:51', 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -339,7 +366,7 @@ ALTER TABLE `offers`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `typesfood`
