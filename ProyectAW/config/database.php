@@ -2,8 +2,8 @@
 return array(
     "driver"    =>"mysql",
     "host"      =>"localhost",
-    "user"      =>"carlos",
-    "pass"      =>"carlangas91",
+    "user"      =>"root",
+    "pass"      =>"",
     "database"  =>"DBproyectAW",
     "charset"   =>"utf-8"
 );
