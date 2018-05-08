@@ -1,0 +1,4 @@
+<!--PROFILE CLI VIEW-->
+
+<?php
+    ?>
