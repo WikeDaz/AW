@@ -1,4 +1,5 @@
 <!-- HEADER HTML -->
+ <link rel="stylesheet" href="css\header.css"  type="text/css" media="all" />
 <div class="header">
     <h1>MADELICIOSA</h1>
     <nav>

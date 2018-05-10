@@ -2,18 +2,19 @@
 /* CSS Document */
 @font-face{
     font-family:AmaticSC-Regular;
-    src:url("ProyectAW/media/fuentes/AmaticSC-Regular.ttf");
+    src:url("../../media/fuentes/AmaticSC-Regular.ttf");
 }
 
 @font-face{
     font-family:lobster;
-    src:url("ProyectAW/media/fuentes/lobster.ttf"); 
+    src:url("../../media/fuentes/lobster.ttf"); 
 }
 
 
 .nav-justified{
     list-style: none;
     display: flex;
+    background-color:#eee;
     font-family: lobster;
 }
 
